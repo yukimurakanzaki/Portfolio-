@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const caseStudies = [
+  {
+    id: 1,
+    company: 'PT Bussan Auto Finance (BAF)',
+    title: 'Agile Transformation: Scaling Team Delivery',
+    subtitle: 'Operations & Delivery · 2023–Present',
+    problem: 'The macroeconomic pressure for rapid digital transformation at BAF required a move away from manual Excel tracking to a systemic delivery framework that could scale across 3 release cycles with zero defects. Existing Jira licenses were underutilized as static Gantt charts, leaving the 19-person team with no real visibility into blockers or delivery risk.',
+    approach: 'I spearheaded the Agile transformation by designing a custom requirement traceability framework and introducing a standardized BRD→FSD handover workflow. I built a Jira Playbook, established formal Scrum ceremonies (Refinement, Sprint Planning, Dailies), and ran a year-long Agile curriculum to shift the team\'s mindset from "project output" to "product outcomes."',
+    outcome: 'Increased cross-team clarification speed by 25% and achieved 100% visibility on blockers for the full 19-person team. The requirement traceability framework reduced rework by 30% and enabled zero major defects across all core feature releases.',
+    tags: ['Agile Transformation', 'Product Ops', 'Leadership'],
+    impact: ['100% Visibility on blockers', '30% reduction in requirement rework', 'Zero major defects on core releases'],
+  },
+  {
+    id: 2,
+    company: 'Danamas (Sinarmas Group)',
+    title: 'Scaling P2P Lending via Bank Integrations',
+    subtitle: 'Fintech · 2022–2023',
+    problem: 'To scale lending capacity, the platform needed to integrate with regional bank partners, while the retail lender dashboard required a simpler UX to improve investor retention.',
+    approach: 'I led the end-to-end integration for three major regional bank partners. Simultaneously, I conducted a UX overhaul of the lender dashboard to simplify portfolio tracking and investment monitoring.',
+    outcome: 'Expanded platform lending capacity through successful bank integrations and drove higher retail investor retention by improving the qualitative dashboard experience.',
+    tags: ['Fintech', 'P2P Lending', 'API Integration'],
+    impact: ['3 Regional Bank integrations', 'Improved lender retention', 'End-to-end lifecycle ownership'],
+  },
+  {
+    id: 3,
+    company: 'SiCepat Ekspres',
+    title: 'Optimizing Last-Mile Logistics Efficiency',
+    subtitle: 'Logistics · 2021–2022',
+    problem: 'Field operations and courier-facing tools lacked a structured development cadence, causing bottlenecks in nationwide delivery workflows and slow release cycles for critical driver tools.',
+    approach: 'I overhauled the backlog management process by introducing EPIC breakdown optimization. I acted as the bridge between field operations and engineering to ensure technical solutions directly addressed courier pain points.',
+    outcome: 'Improved sprint delivery speed by 18% month-over-month. Successfully launched the driver management platform (mobile and web) that streamlined operations across nationwide branches.',
+    tags: ['Logistics', 'Mobile App', 'Operations'],
+    impact: ['18% MoM increase in delivery speed', 'Nationwide platform rollout', 'Optimized EPIC/Story structure'],
+  },
+];
+---
+
+<Layout title="Case Studies" description="Product case studies from fintech work at Danamas, SiCepat, and BAF.">
+
+  <!-- Header -->
+  <section class="py-20 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-sky-400 font-semibold text-sm uppercase tracking-widest mb-4">Case Studies</p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-sky-400 to-blue-500">
+  Work that moved the needle.
+      </h1>
+      <p class="text-slate-300 text-lg max-w-2xl leading-relaxed">
+        Three stories from the field — real problems, real decisions, real outcomes.
+        Placeholder content will be replaced with actual case studies.
+      </p>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+      {caseStudies.map((cs, i) => (
+        <article class="grid lg:grid-cols-5 gap-8 lg:gap-12 p-8 rounded-3xl transition-all duration-300 hover:bg-white/5 hover:shadow-[0_0_30px_-15px_rgba(56,189,248,0.3)] border border-transparent hover:border-white/10 group mb-8">
+
+          <!-- Left: Meta -->
+          <div class="lg:col-span-2">
+            <div class="sticky top-24">
+              <p class="text-sky-400 text-xs font-semibold uppercase tracking-wider mb-2">{cs.company}</p>
+              <h2 class="text-2xl font-bold text-white mb-2">{cs.title}</h2>
+              <p class="text-slate-500 text-sm mb-6">{cs.subtitle}</p>
+
+              <div class="flex flex-wrap gap-2 mb-8">
+                {cs.tags.map(tag => (
+                  <span class="px-2 py-0.5 bg-sky-400/10 text-sky-400 text-xs rounded-full border border-sky-400/20">{tag}</span>
+                ))}
+              </div>
+
+              <!-- Impact -->
+              <div class="border border-white/20 rounded-2xl p-5 bg-white/5 backdrop-blur-md shadow-inner transition-transform duration-500 group-hover:scale-[1.02]">
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">Key Impact</p>
+                <ul class="space-y-2">
+                  {cs.impact.map(point => (
+                    <li class="text-slate-300 text-sm flex items-start gap-2">
+                      <svg class="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Content -->
+          <div class="lg:col-span-3 space-y-8">
+            <div>
+              <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">The Problem</h3>
+              <p class="text-slate-300 leading-relaxed">{cs.problem}</p>
+            </div>
+            <div>
+              <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">My Approach</h3>
+              <p class="text-slate-300 leading-relaxed">{cs.approach}</p>
+            </div>
+            <div>
+              <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">The Outcome</h3>
+              <p class="text-slate-300 leading-relaxed">{cs.outcome}</p>
+            </div>
+          </div>
+
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-slate-400 mb-4">Want to discuss one of these in detail?</p>
+      <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 bg-sky-500 hover:bg-sky-400 text-white font-semibold rounded-lg transition-colors">
+        Let's Talk
+      </a>
+    </div>
+  </section>
+
+</Layout>

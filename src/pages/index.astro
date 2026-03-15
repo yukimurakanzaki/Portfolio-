@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home" description="Senior Product Manager in Jakarta with 4+ years in fintech.">
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+    <div class="absolute top-1/4 -left-20 w-96 h-96 bg-sky-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse"></div>
+    <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse transition-delay-1000"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid lg:grid-cols-5 gap-12 items-center">
+
+        <!-- Text block -->
+        <div class="lg:col-span-3">
+          <p class="text-sky-400 font-semibold text-sm uppercase tracking-widest mb-4 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-sky-400 animate-ping"></span>
+            Senior Product Manager · Jakarta
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-br from-white via-slate-200 to-sky-400">
+            Senior Fintech PM<br />
+            <span class="text-sky-400">Scaling Multifinance Ops &amp; Backend Architectures.</span>
+          </h1>
+
+          <p class="text-slate-300 text-lg sm:text-xl leading-relaxed mb-10 max-w-xl">
+            4+ years building financial products at Danamas/Sinarmas, SiCepat, and BAF.
+            I bridge strategy and execution so teams move faster and users get real value.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/case-studies"
+              class="inline-flex items-center justify-center px-6 py-3 bg-sky-500 hover:bg-sky-400 text-white font-semibold rounded-lg transition-colors"
+            >
+              View Case Studies
+            </a>
+            <a
+              href="/contact"
+              class="inline-flex items-center justify-center px-6 py-3 border border-sky-400/40 text-sky-400 hover:bg-sky-400/10 font-semibold rounded-lg transition-colors"
+            >
+              Get in Touch
+            </a>
+          </div>
+        </div>
+
+        <!-- Profile photo -->
+        <div class="lg:col-span-2 flex justify-center">
+          <div class="relative">
+            <div class="absolute inset-0 rounded-full bg-sky-500/20 blur-2xl scale-110 pointer-events-none"></div>
+            <img
+              src="/images/profile.jpg"
+              alt="Muhammad Adi Putra — Senior Product Manager Jakarta"
+              class="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full object-cover object-top border-2 border-sky-400/30 shadow-2xl"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="border-t border-white/10 py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {[
+          { value: '4+', label: 'Years in Fintech' },
+          { value: '3', label: 'Companies' },
+          { value: '10+', label: 'Products Shipped' },
+          { value: 'Jakarta', label: 'Based In' },
+        ].map(stat => (
+          <div class="text-center group">
+            <div class="text-4xl font-extrabold text-white group-hover:text-sky-400 transition-colors mb-1 drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]">{stat.value}</div>
+            <div class="text-slate-500 text-xs uppercase tracking-widest font-bold">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Work Preview -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Featured Work</h2>
+        <a href="/case-studies" class="text-sky-400 hover:text-sky-300 text-sm font-medium transition-colors">
+          View all →
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {[
+          {
+            company: 'Danamas / Sinarmas',
+            title: 'Lending Platform Redesign',
+            desc: 'Redesigned the core loan application flow, reducing drop-off by 30% and cutting processing time in half.',
+            tags: ['Lending', 'UX', 'Fintech'],
+          },
+          {
+            company: 'SiCepat',
+            title: 'Driver Incentive System',
+            desc: 'Built a real-time incentive dashboard for 50,000+ courier partners, increasing on-time delivery rates.',
+            tags: ['Logistics', 'Gamification', 'B2B2C'],
+          },
+          {
+            company: 'BAF',
+            title: 'Digital Credit Scoring',
+            desc: 'Introduced alternative data signals into the credit assessment pipeline, expanding approval reach.',
+            tags: ['Credit', 'Data', 'Fintech'],
+          },
+        ].map(item => (
+          <a
+            href="/case-studies"
+            class="group block border border-white/10 rounded-2xl p-6 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-sky-400/50 hover:shadow-[0_0_30px_-10px_rgba(56,189,248,0.3)] transition-all duration-300 hover:-translate-y-1"
+          >
+            <p class="text-sky-400 text-xs font-semibold uppercase tracking-wider mb-2">{item.company}</p>
+            <h3 class="text-white font-bold text-lg mb-3 group-hover:text-sky-300 transition-colors">{item.title}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">{item.desc}</p>
+            <div class="flex flex-wrap gap-2">
+              {item.tags.map(tag => (
+                <span class="px-2 py-0.5 bg-sky-400/10 text-sky-400 text-xs rounded-full">{tag}</span>
+              ))}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+        Looking for a PM or consultant?
+      </h2>
+      <p class="text-slate-400 mb-8 max-w-lg mx-auto">
+        Whether you need embedded product leadership or help structuring your own PM portfolio — let's talk.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center px-8 py-3 bg-sky-500 hover:bg-sky-400 text-white font-semibold rounded-lg transition-colors"
+      >
+        Start a Conversation
+      </a>
+    </div>
+  </section>
+
+</Layout>

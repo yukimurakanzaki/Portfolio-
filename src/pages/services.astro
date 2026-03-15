@@ -1,0 +1,155 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Services" description="PM consulting and portfolio building services for professionals in Indonesia.">
+
+  <!-- Header -->
+  <section class="relative py-24 overflow-hidden border-b border-white/10">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-sky-500/10 rounded-full filter blur-[120px] -z-10"></div>
+    
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <p class="text-sky-400 font-semibold text-sm uppercase tracking-widest mb-4 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+        Services & Mentorship
+      </p>
+      <h1 class="text-4xl sm:text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-sky-400">
+        How I can help you.
+      </h1>
+      <p class="text-slate-300 text-lg max-w-2xl leading-relaxed">
+        Whether you're a company that needs product leadership or a professional looking to break into PM —
+        I offer focused, practical support.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8">
+
+        <!-- Service 1: PM Consulting -->
+        <div class="group relative border border-white/10 rounded-3xl p-8 bg-white/[0.03] backdrop-blur-md hover:bg-white/[0.07] hover:border-sky-400/50 hover:shadow-[0_0_40px_-15px_rgba(56,189,248,0.3)] transition-all duration-500 hover:-translate-y-2">
+          <div class="w-12 h-12 rounded-xl bg-sky-400/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold text-white mb-3">PM Consulting</h2>
+          <p class="text-slate-400 leading-relaxed mb-6">
+            Embedded product leadership for startups and scale-ups in Indonesia.
+            I work alongside your team to sharpen strategy, improve discovery processes,
+            and accelerate delivery.
+          </p>
+
+          <ul class="space-y-3 mb-8">
+            {[
+              'Product strategy & roadmap development',
+              'Discovery workshops and user research facilitation',
+              'PRD writing and stakeholder alignment support',
+              'Sprint planning and backlog prioritization',
+              'OKR setting and metrics frameworks',
+              'Interim or fractional PM engagements',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-slate-300 text-sm">
+                <svg class="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          <p class="text-sky-400 text-sm font-medium mb-1">Best for:</p>
+          <p class="text-slate-400 text-sm">Early-stage startups, fintech companies, and teams scaling their product function.</p>
+        </div>
+
+        <!-- Service 2: Portfolio Building -->
+        <div class="group relative border border-white/10 rounded-3xl p-8 bg-white/[0.03] backdrop-blur-md hover:bg-white/[0.07] hover:border-sky-400/50 hover:shadow-[0_0_40px_-15px_rgba(56,189,248,0.3)] transition-all duration-500 hover:-translate-y-2">
+          <div class="w-14 h-14 rounded-2xl bg-sky-400/10 border border-sky-400/20 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-sky-400/20 transition-all duration-500">
+            <svg class="w-6 h-6 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold text-white mb-3">PM Portfolio Building</h2>
+          <p class="text-slate-400 leading-relaxed mb-6">
+            Helping professionals land their first or next PM role by building a compelling
+            portfolio that tells a clear story. From aspiring PMs to career-switchers and
+            experienced PMs who've never packaged their work properly.
+          </p>
+
+          <ul class="space-y-3 mb-8">
+            {[
+              '1:1 portfolio review and feedback sessions',
+              'Case study structuring (problem → approach → outcome)',
+              'Resume and LinkedIn profile optimization',
+              'Mock PM interviews (product sense, execution, strategy)',
+              'Personal website setup and copy guidance',
+              'Job search strategy for the Indonesian market',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-slate-300 text-sm">
+                <svg class="w-4 h-4 text-sky-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+
+          <p class="text-sky-400 text-sm font-medium mb-1">Best for:</p>
+          <p class="text-slate-400 text-sm">Aspiring PMs, BA/analyst-to-PM transitions, and early-career PMs in Jakarta and Indonesia.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="py-20 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-white mb-12 text-center">How it works</h2>
+      <div class="grid sm:grid-cols-3 gap-8">
+        {[
+          {
+            step: '01',
+            title: 'Intro call',
+            desc: 'We spend 30 minutes understanding your situation, goals, and what success looks like.',
+          },
+          {
+            step: '02',
+            title: 'Proposal',
+            desc: 'I send a clear scope, timeline, and pricing — no vague retainers or hidden extras.',
+          },
+          {
+            step: '03',
+            title: 'Get to work',
+            desc: 'We execute with regular check-ins, async updates, and a clear definition of done.',
+          },
+        ].map(step => (
+          <div class="text-center">
+            <div class="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-b from-sky-400/20 to-transparent mb-2 select-none">{step.step}</div>
+            <h3 class="text-white font-bold text-lg mb-3">{step.title}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 border-t border-white/10">
+  <div class="max-w-4xl mx-auto px-4 text-center p-12 rounded-[40px] bg-gradient-to-b from-white/5 to-transparent border border-white/10 backdrop-blur-sm">
+      <h2 class="text-2xl font-bold text-white mb-4">Ready to start?</h2>
+      <p class="text-slate-400 mb-8 max-w-md mx-auto">
+        Reach out via WhatsApp or email and we'll set up an intro call.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center px-8 py-3 bg-sky-500 hover:bg-sky-400 text-white font-semibold rounded-lg transition-colors"
+      >
+        Get in Touch
+      </a>
+    </div>
+  </section>
+
+</Layout>
