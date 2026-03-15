@@ -42,6 +42,16 @@ import Layout from '../layouts/Layout.astro';
             >
               Get in Touch
             </a>
+            <a
+              href="/MuhammadAdiPutra_CV.pdf"
+              download
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/10 text-slate-300 hover:text-white hover:border-white/30 font-semibold rounded-lg transition-colors"
+            >
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              Download CV
+            </a>
           </div>
         </div>
 
@@ -69,7 +79,7 @@ import Layout from '../layouts/Layout.astro';
           { value: '4+', label: 'Years in Fintech' },
           { value: '3', label: 'Companies' },
           { value: '10+', label: 'Products Shipped' },
-          { value: 'Jakarta', label: 'Based In' },
+          { value: '19', label: 'Team Members Led' },
         ].map(stat => (
           <div class="text-center group">
             <div class="text-4xl font-extrabold text-white group-hover:text-sky-400 transition-colors mb-1 drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]">{stat.value}</div>
@@ -93,22 +103,22 @@ import Layout from '../layouts/Layout.astro';
       <div class="grid md:grid-cols-3 gap-6">
         {[
           {
-            company: 'Danamas / Sinarmas',
-            title: 'Lending Platform Redesign',
-            desc: 'Redesigned the core loan application flow, reducing drop-off by 30% and cutting processing time in half.',
-            tags: ['Lending', 'UX', 'Fintech'],
+            company: 'PT Bussan Auto Finance (BAF)',
+            title: 'Agile Transformation: Scaling Team Delivery',
+            desc: 'Designed a custom requirement traceability framework and BRD→FSD handover workflow for a 19-person team — achieving 30% less rework and zero major defects across core releases.',
+            tags: ['Agile Transformation', 'Product Ops', 'Leadership'],
           },
           {
-            company: 'SiCepat',
-            title: 'Driver Incentive System',
-            desc: 'Built a real-time incentive dashboard for 50,000+ courier partners, increasing on-time delivery rates.',
-            tags: ['Logistics', 'Gamification', 'B2B2C'],
+            company: 'Danamas (Sinarmas Group)',
+            title: 'Scaling P2P Lending via Bank Integrations',
+            desc: 'Led end-to-end integration for three regional bank partners to expand lending capacity, while overhauling the lender dashboard UX to improve retail investor retention.',
+            tags: ['Fintech', 'P2P Lending', 'API Integration'],
           },
           {
-            company: 'BAF',
-            title: 'Digital Credit Scoring',
-            desc: 'Introduced alternative data signals into the credit assessment pipeline, expanding approval reach.',
-            tags: ['Credit', 'Data', 'Fintech'],
+            company: 'SiCepat Ekspres',
+            title: 'Optimizing Last-Mile Logistics Delivery',
+            desc: 'Restructured backlog management and EPIC breakdowns to improve sprint delivery speed by 18% MoM — culminating in the nationwide rollout of a new driver management platform.',
+            tags: ['Logistics', 'Mobile App', 'Operations'],
           },
         ].map(item => (
           <a
