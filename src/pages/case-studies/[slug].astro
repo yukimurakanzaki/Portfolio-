@@ -1,0 +1,137 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const caseStudies = await getCollection('case-studies');
+  const sorted = caseStudies.sort((a, b) => a.data.order - b.data.order);
+  return sorted.map(entry => ({
+    params: { slug: entry.data.slug },
+    props: { entry, allEntries: sorted },
+  }));
+}
+
+const { entry, allEntries } = Astro.props;
+const { Content } = await render(entry);
+
+const currentIndex = allEntries.findIndex((e: any) => e.data.slug === entry.data.slug);
+const nextIndex = (currentIndex + 1) % allEntries.length;
+const nextEntry = allEntries[nextIndex];
+---
+
+<Layout title={entry.data.title} description={entry.data.summary}>
+  <!-- Reading progress bar -->
+  <div id="progress-bar" class="fixed top-0 left-0 h-[3px] bg-[#2563EB] z-[100] transition-none" style="width: 0%"></div>
+
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <!-- Header -->
+    <header class="mb-10">
+      <p class="text-[#2563EB] text-sm font-semibold uppercase tracking-wider mb-3">{entry.data.company}</p>
+      <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4 leading-tight">{entry.data.title}</h1>
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="text-slate-500 dark:text-slate-400 text-sm">{entry.data.readTime}</span>
+        <span class="text-slate-300 dark:text-slate-600">·</span>
+        <div class="flex flex-wrap gap-2">
+          {entry.data.tags.map((tag: string) => (
+            <span class="px-3 py-1 border border-[#2563EB]/20 text-[#2563EB] dark:text-blue-400 text-xs rounded-full font-medium">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </header>
+
+    <!-- Rendered markdown content -->
+    <div class="prose-content">
+      <Content />
+    </div>
+
+    <!-- Bottom navigation -->
+    <nav class="mt-16 pt-8 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <a href="/case-studies" class="text-[#2563EB] hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB] rounded">
+        ← Back to all case studies
+      </a>
+      <a href={`/case-studies/${nextEntry.data.slug}`} class="text-[#2563EB] hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB] rounded">
+        Next case study →
+      </a>
+    </nav>
+  </article>
+</Layout>
+
+<script>
+  const progressBar = document.getElementById('progress-bar');
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0;
+    if (progressBar) progressBar.style.width = progress + '%';
+  }
+  window.addEventListener('scroll', () => requestAnimationFrame(updateProgress));
+  updateProgress();
+</script>
+
+<style>
+  @reference "tailwindcss";
+
+  .prose-content :global(h2) {
+    @apply text-2xl font-bold text-slate-900 dark:text-white mt-10 mb-4;
+  }
+
+  .prose-content :global(h3) {
+    @apply text-xl font-semibold text-slate-900 dark:text-white mt-8 mb-3;
+  }
+
+  .prose-content :global(h4) {
+    @apply text-lg font-semibold text-slate-900 dark:text-white mt-6 mb-2;
+  }
+
+  .prose-content :global(p) {
+    @apply text-slate-700 dark:text-slate-300 leading-relaxed mb-4;
+  }
+
+  .prose-content :global(ul) {
+    @apply list-disc list-inside text-slate-700 dark:text-slate-300 mb-4 space-y-2;
+  }
+
+  .prose-content :global(ol) {
+    @apply list-decimal list-inside text-slate-700 dark:text-slate-300 mb-4 space-y-2;
+  }
+
+  .prose-content :global(li) {
+    @apply leading-relaxed;
+  }
+
+  .prose-content :global(strong) {
+    @apply font-semibold text-slate-900 dark:text-white;
+  }
+
+  .prose-content :global(table) {
+    @apply w-full border-collapse mb-6 text-sm;
+  }
+
+  .prose-content :global(th) {
+    @apply text-left font-semibold text-slate-900 dark:text-white px-3 py-2 border-b border-slate-200 dark:border-white/10;
+  }
+
+  .prose-content :global(td) {
+    @apply text-slate-700 dark:text-slate-300 px-3 py-2 border-b border-slate-100 dark:border-white/5;
+  }
+
+  .prose-content :global(a) {
+    @apply text-[#2563EB] hover:underline;
+  }
+
+  .prose-content :global(blockquote) {
+    @apply border-l-4 border-[#2563EB]/30 pl-4 italic text-slate-600 dark:text-slate-400 my-4;
+  }
+
+  .prose-content :global(code) {
+    @apply bg-slate-100 dark:bg-white/10 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  .prose-content :global(pre) {
+    @apply bg-slate-100 dark:bg-white/10 p-4 rounded-lg overflow-x-auto mb-4;
+  }
+
+  .prose-content :global(hr) {
+    @apply border-slate-200 dark:border-white/10 my-8;
+  }
+</style>

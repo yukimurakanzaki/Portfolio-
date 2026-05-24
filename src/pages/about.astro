@@ -2,170 +2,169 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="About" description="Learn about my journey as a Senior Product Manager in Jakarta's fintech scene.">
+<Layout title="About" description="Product Manager with 4+ years in Indonesian fintech — payments, lending, and internal platforms. Based in Jakarta.">
 
-  <!-- Hero -->
-  <section class="py-20 border-b border-white/10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-start md:items-center gap-10">
+  <!-- Page Heading -->
+  <section class="py-16 border-b border-slate-200 dark:border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">
+        About Me
+      </h1>
+      <p class="text-slate-600 dark:text-slate-400 text-lg">
+        A snapshot of who I am, where I've been, and what I'm building next.
+      </p>
+    </div>
+  </section>
 
-        <!-- Text -->
-        <div class="flex-1">
-          <p class="text-sky-400 font-semibold text-sm uppercase tracking-widest mb-4">About Me</p>
-          <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-6 max-w-3xl">
-            A PM who lives at the intersection of data, users, and business.
-          </h1>
-          <p class="text-slate-300 text-lg max-w-2xl leading-relaxed">
-            I've spent the last 4+ years building products in Indonesia's fast-moving fintech landscape —
-            from peer-to-peer lending and last-mile logistics to consumer finance.
+  <!-- Biographical Summary -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Bio</h2>
+      <div class="space-y-5 text-slate-600 dark:text-slate-300 text-base leading-relaxed">
+        <p>
+          I'm a Product Manager with 4+ years building fintech and multifinance products in Indonesia — spanning consumer mobile apps, payment integrations, and internal operational platforms.
+        </p>
+        <p>
+          Currently at PT Bussan Auto Finance, I lead end-to-end delivery across two product lines (BAF Mobile and BOSS) with a 19-person cross-functional team. Before that, I owned the lender platform roadmap at Danamas (Sinarmas Group) and shipped payment rail integrations with BNI and Instamoney in a regulated P2P lending environment.
+        </p>
+        <p>
+          Outside my day job, I'm building <span class="text-[#2563EB] font-medium">StoryForge.id</span> — an AI-powered BRD analysis tool for Indonesian PMs — using Next.js 14, Supabase, and the Anthropic API. I validated the pain, wrote the PRD, vibe-coded the product, and deployed it myself.
+        </p>
+        <p>
+          I'm based in Jakarta and currently open to Senior PM roles in Indonesian fintech and selectively exploring opportunities in Singapore and KL.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career History -->
+  <section class="py-16 border-t border-slate-200 dark:border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-8">Career History</h2>
+      <div class="space-y-0">
+
+        <!-- BAF -->
+        <div class="relative pl-6 pb-10 border-l-2 border-slate-200 dark:border-white/10 last:border-l-transparent last:pb-0">
+          <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#2563EB] border-2 border-white dark:border-[#0f172a]"></div>
+          <p class="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-1">2023 – Present</p>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-0.5">Product Manager <span class="text-slate-400 dark:text-slate-500 font-normal text-sm">(Official Title: Product Owner &amp; UI/UX Specialist)</span></h3>
+          <p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-3">PT Bussan Auto Finance (BAF)</p>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-2">BAF Mobile (consumer app) + BOSS (internal OPS platform)</p>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Led AyoConnect payment gateway integration. Managed 19-person team across BE, FE, QA, and design.</p>
+        </div>
+
+        <!-- Danamas -->
+        <div class="relative pl-6 pb-10 border-l-2 border-slate-200 dark:border-white/10 last:border-l-transparent last:pb-0">
+          <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#2563EB] border-2 border-white dark:border-[#0f172a]"></div>
+          <p class="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-1">2022 – 2023</p>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-0.5">Digital Product Manager</h3>
+          <p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-3">PT Danamas, Sinarmas Group</p>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-2">Lender platform (mobile + web) + Jido Gold (0→1)</p>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Payment rail integrations: BNI, Instamoney. Full roadmap ownership in OJK P2P environment.</p>
+        </div>
+
+        <!-- SiCepat -->
+        <div class="relative pl-6 pb-10 border-l-2 border-slate-200 dark:border-white/10 last:border-l-transparent last:pb-0">
+          <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[#2563EB] border-2 border-white dark:border-[#0f172a]"></div>
+          <p class="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-1">2021 – 2022</p>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-0.5">Associate Product Manager</h3>
+          <p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-3">SiCepat Ekspres Indonesia</p>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">First-mile outlet platform + driver management app (mobile + web)</p>
+        </div>
+
+        <!-- Pre-PM -->
+        <div class="relative pl-6 pb-10 border-l-2 border-slate-200 dark:border-white/10 last:border-l-transparent last:pb-0">
+          <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-600 border-2 border-white dark:border-[#0f172a]"></div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">2017 – 2021</p>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-0.5">Technical Writer & System Analyst</h3>
+          <p class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-3">Pegadaian (via Avows), WebCenter, Gauri Optima Sukses</p>
+        </div>
+
+        <!-- Education -->
+        <div class="relative pl-6 border-l-2 border-transparent">
+          <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-200 dark:bg-slate-700 border-2 border-white dark:border-[#0f172a]"></div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">Education</p>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-0.5">B.Sc. Information Technology</h3>
+          <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">UIN Sultan Syarif Kasim Riau</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What I'm Looking For -->
+  <section class="py-16 border-t border-slate-200 dark:border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-8">What I'm Looking For</h2>
+      <div class="space-y-4">
+
+        <div class="border border-slate-200 dark:border-white/10 rounded-2xl p-6 bg-slate-50 dark:bg-white/5">
+          <p class="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-2">Role</p>
+          <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+            Senior PM or Lead PM roles in fintech — ideally in lending, payments, or investment products.
           </p>
         </div>
 
-        <!-- Photo -->
-        <div class="flex-shrink-0">
-          <img
-            src="/images/profile.jpg"
-            alt="Muhammad Adi Putra"
-            class="w-40 h-40 md:w-52 md:h-52 rounded-2xl object-cover object-top border border-white/10 shadow-xl"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Career Story -->
-  <section class="py-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-3 gap-12">
-
-        <!-- Timeline -->
-        <div class="lg:col-span-2">
-          <h2 class="text-2xl font-bold text-white mb-10">Career Story</h2>
-
-          <div class="space-y-10">
-            {[
-              {
-                period: 'Sep 2023 – Present',
-                company: 'PT Bussan Auto Finance (BAF)',
-                role: 'Product Owner & UI/UX Specialist — BAF Mobile & BOSS Internal Platform',
-                desc: 'I lead end-to-end delivery for 10+ initiatives across two product lines — BAF Mobile (consumer app) and BOSS (OPS workflows, reconciliation, submission engine) — managing a cross-functional team of 19 across BE, FE, QA, and design. I improved requirement clarity by 30% through a redesigned BRD to FSD intake workflow, delivered BAF Mobile features (Deep Link Engine, FDE Flow, Email Verification) with zero production defects across 3 release cycles, and built Agile delivery cadence from scratch across 3 teams in a previously unstructured environment.',
-              },
-              {
-                period: 'Aug 2022 – Sep 2023',
-                company: 'PT Danamas (Sinarmas Group)',
-                role: 'Digital Product Manager — Danamas Lender Platform & Jido Gold',
-                desc: 'I owned the full product roadmap for the Danamas Lender Platform (mobile + web) from discovery through launch, delivering a revamped app that improved user engagement and supported revenue growth targets. I built and launched Jido Gold from zero to first users, leading cross-functional discovery across UX, engineering, data, and compliance. I also managed payment rail integrations with BNI, Instamoney, and internal payment infrastructure.',
-              },
-              {
-                period: 'Aug 2021 – Aug 2022',
-                company: 'SiCepat Ekspres Indonesia',
-                role: 'Associate Product Manager',
-                desc: "I delivered the first-mile outlet platform deployed across nationwide branches and launched the driver management platform (mobile + web), improving field operations efficiency across Indonesia. By restructuring backlogs and optimizing EPIC breakdowns, I improved the team's sprint delivery speed by 18% month-over-month.",
-              },
-            ].map((item, i) => (
-              <div class="relative pl-8 border-l-2 border-sky-400/30">
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-sky-400 border-2 border-navy-950" style="border-color: #07111f;"></div>
-                <p class="text-sky-400 text-xs font-semibold uppercase tracking-wider mb-1">{item.period}</p>
-                <h3 class="text-white font-bold text-lg">{item.company}</h3>
-                <p class="text-slate-400 text-sm font-medium mb-3">{item.role}</p>
-                <p class="text-slate-300 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
+        <div class="border border-slate-200 dark:border-white/10 rounded-2xl p-6 bg-slate-50 dark:bg-white/5">
+          <p class="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-2">Indonesia</p>
+          <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+            Fast-moving regulated fintech companies in multifinance, P2P lending, or neo-banking.
+          </p>
         </div>
 
-        <!-- Sidebar: What I Stand For -->
-        <div>
-          <h2 class="text-2xl font-bold text-white mb-10">What I Stand For</h2>
+        <div class="border border-slate-200 dark:border-white/10 rounded-2xl p-6 bg-slate-50 dark:bg-white/5">
+          <p class="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-2">SEA — 18–24 month horizon</p>
+          <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+            Product roles at fintech infrastructure, digital banking, or wealthtech companies in Singapore or Kuala Lumpur.
+          </p>
+        </div>
 
-          <div class="space-y-6">
-            {[
-              {
-                icon: '🎯',
-                title: 'Outcome over output',
-                desc: 'I care about measurable user and business impact, not just shipping features on time.',
-              },
-              {
-                icon: '🤝',
-                title: 'Empathy first',
-                desc: 'The best product decisions start with genuinely understanding the person on the other end.',
-              },
-              {
-                icon: '📊',
-                title: 'Data-informed, not data-obsessed',
-                desc: 'I combine qualitative insights with quantitative signals to make confident decisions under uncertainty.',
-              },
-              {
-                icon: '🚀',
-                title: 'Ship, learn, iterate',
-                desc: 'I believe in getting working products in front of users quickly and refining from real feedback.',
-              },
-            ].map(item => (
-              <div class="border border-white/10 rounded-xl p-5" style="background-color: #0d1f3c;">
-                <div class="text-2xl mb-3">{item.icon}</div>
-                <h3 class="text-white font-semibold mb-2">{item.title}</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
+        <div class="border border-slate-200 dark:border-white/10 rounded-2xl p-6 bg-slate-50 dark:bg-white/5">
+          <p class="text-xs font-semibold text-[#2563EB] uppercase tracking-widest mb-2">What matters to me</p>
+          <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3">
+            Outcome ownership, real user exposure, and an environment where product decisions are driven by data and user insight — not by whoever spoke last in the steering committee.
+          </p>
+          <p class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+            I'm not looking for another execution-only role. I want to own strategy, talk to users, and ship things I'm proud of in five years.
+          </p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Process Playbook -->
-  <section class="py-20 border-t border-white/10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-bold text-white mb-10">My Process Playbook</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        {[
-          {
-            step: '1. Discovery & Gap Analysis',
-            desc: 'I bridge business intent and engineering constraints by identifying requirement gaps early — reducing rework by 30% and ensuring BRD to FSD handovers are traceable and actionable.',
-          },
-          {
-            step: '2. Agile Governance',
-            desc: 'I establish Scrum ceremonies and sprint cadences from scratch, turning chaotic Excel-based tracking into high-velocity delivery with full visibility on blockers across cross-functional teams.',
-          },
-          {
-            step: '3. Iterative Shipping',
-            desc: 'I focus on outcome-based releases, using RICE prioritization to ensure every feature moves a core business KPI — not just ships on schedule.',
-          },
-        ].map(item => (
-          <div class="p-6 rounded-2xl border border-white/10 bg-white/5">
-            <h3 class="text-sky-400 font-bold mb-3">{item.step}</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
-          </div>
+  <!-- StoryForge.id -->
+  <section class="py-16 border-t border-slate-200 dark:border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">StoryForge.id</h2>
+        <span class="inline-flex items-center gap-1.5 text-slate-400 dark:text-slate-500 text-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+          Launching soon
+        </span>
+      </div>
+
+      <div class="space-y-5 text-slate-600 dark:text-slate-300 text-base leading-relaxed mb-8">
+        <p>
+          StoryForge.id is an AI-powered BRD analysis tool built for Indonesian Product Managers. It reads your BRD, identifies gaps, ambiguities, and missing business rules, then generates a structured Q&amp;A list you can send to Business Enablement — in Bahasa Indonesia, ready to send.
+        </p>
+        <p>
+          I built it solo in ~10 hours/week alongside a full-time PM role. Pain validated with 4 PMs, 3 willing to pay. Approaching beta launch with first paying user.
+        </p>
+        <p class="italic text-slate-500 dark:text-slate-400">
+          This project exists because I lived the pain it solves. Every week I spent hours reconstructing requirements that should have been written before they reached me. StoryForge is what I wish I'd had on day one.
+        </p>
+      </div>
+
+      <!-- Stack tags -->
+      <div class="flex flex-wrap gap-2">
+        {['Next.js 14', 'Supabase', 'Anthropic API (claude-haiku)', 'Vercel', 'Upstash QStash'].map(tech => (
+          <span class="px-3 py-1 border border-[#2563EB]/20 text-[#2563EB] dark:text-blue-400 text-xs rounded-full font-medium bg-[#2563EB]/5">
+            {tech}
+          </span>
         ))}
       </div>
-    </div>
-  </section>
 
-  <!-- Skills -->
-  <section class="py-20 border-t border-white/10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-bold text-white mb-10">Skills & Tools</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {[
-          { category: 'Product Strategy', items: ['OKR Setting', 'Roadmapping', 'RICE Prioritization', 'Go-to-Market', 'Competitive Analysis'] },
-          { category: 'Technical & Data', items: ['SQL (Autonomous Data Extraction)', 'API Integration (BNI, Instamoney)', 'Backend Lending Architecture', 'BRD to FSD Workflow'] },
-          { category: 'Execution', items: ['Agile / Scrum', 'PRD Writing', 'Stakeholder Alignment', 'Sprint Planning', 'Requirement Traceability'] },
-          { category: 'Tools', items: ['Jira', 'Figma', 'Mixpanel', 'Notion', 'Claude Code', 'Kroolo'] },
-        ].map(skill => (
-          <div class="border border-white/10 rounded-xl p-5" style="background-color: #0d1f3c;">
-            <h3 class="text-sky-400 text-sm font-semibold uppercase tracking-wider mb-4">{skill.category}</h3>
-            <ul class="space-y-2">
-              {skill.items.map(item => (
-                <li class="text-slate-300 text-sm flex items-center gap-2">
-                  <span class="w-1 h-1 rounded-full bg-sky-400 flex-shrink-0"></span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
     </div>
   </section>
 

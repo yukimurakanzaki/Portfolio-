@@ -1,133 +1,189 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Replace with your actual WhatsApp number (include country code, no + or spaces)
-const whatsappNumber = '082386491148';
-const whatsappMessage = encodeURIComponent("Hi! I found your portfolio and I'd love to connect.");
-const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
 const email = 'muhammadadiputra789@gmail.com';
+const linkedinUrl = 'https://linkedin.com/in/m-adi-putra';
 ---
 
 <Layout title="Contact" description="Get in touch with a Senior Product Manager based in Jakarta.">
 
-  <!-- Header -->
-  <section class="py-20 border-b border-white/10">
+  <!-- Hero / Heading -->
+  <section class="py-20 border-b border-slate-200 dark:border-white/10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-sky-400 font-semibold text-sm uppercase tracking-widest mb-4">Contact</p>
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-6">
-        Let's talk.
+      <p class="text-[#2563EB] font-semibold text-sm uppercase tracking-widest mb-4">Get in Touch</p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+        Let's Talk
       </h1>
-      <p class="text-slate-300 text-lg max-w-xl leading-relaxed">
+      <p class="text-slate-600 dark:text-slate-300 text-lg max-w-xl leading-relaxed">
         Whether it's a consulting engagement, a PM coaching session, or just a conversation —
         I'm happy to hear what you're working on.
       </p>
     </div>
   </section>
 
-  <!-- Contact Options -->
+  <!-- Contact Methods -->
   <section class="py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-2 gap-8 max-w-2xl">
 
-        <!-- WhatsApp -->
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group flex flex-col border border-white/10 rounded-2xl p-8 hover:border-green-400/40 transition-colors"
-          style="background-color: #0d1f3c;"
-        >
-          <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors">
-            <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        <!-- Email -->
+        <div class="flex flex-col border border-slate-200 dark:border-white/10 rounded-2xl p-8 bg-slate-50 dark:bg-white/5">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-[#2563EB]/10 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           </div>
-          <h2 class="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors">WhatsApp</h2>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            The fastest way to reach me. Send a message and I'll reply within a few hours during business days.
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Email</h2>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+            For formal enquiries, consulting proposals, or longer-form conversations.
           </p>
-          <div class="mt-auto flex items-center gap-2 text-green-400 text-sm font-medium">
-            <span>Message on WhatsApp</span>
+          <div class="mt-auto flex items-center gap-3">
+            <a
+              href={`mailto:${email}`}
+              class="text-[#2563EB] text-sm font-medium break-all hover:underline focus:outline-none focus:ring-2 focus:ring-[#2563EB] rounded"
+            >
+              {email}
+            </a>
+            <button
+              id="copy-email-btn"
+              type="button"
+              class="shrink-0 p-2 rounded-md text-slate-500 dark:text-slate-400 hover:text-[#2563EB] hover:bg-slate-100 dark:hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
+              aria-label="Copy email to clipboard"
+              data-email={email}
+            >
+              <!-- Copy icon -->
+              <svg id="copy-icon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              <!-- Check icon (shown after copy) -->
+              <svg id="check-icon" class="w-4 h-4 hidden text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- LinkedIn -->
+        <a
+          href={linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex flex-col border border-slate-200 dark:border-white/10 rounded-2xl p-8 bg-slate-50 dark:bg-white/5 hover:border-[#2563EB]/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
+        >
+          <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-[#2563EB]/10 flex items-center justify-center mb-6 group-hover:bg-blue-100 dark:group-hover:bg-[#2563EB]/20 transition-colors">
+            <svg class="w-6 h-6 text-[#2563EB]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#2563EB] transition-colors">LinkedIn</h2>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+            Connect with me on LinkedIn for professional networking and updates.
+          </p>
+          <div class="mt-auto flex items-center gap-2 text-[#2563EB] text-sm font-medium">
+            <span>View Profile</span>
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </div>
         </a>
 
-        <!-- Email -->
-        <a
-          href={`mailto:${email}`}
-          class="group flex flex-col border border-white/10 rounded-2xl p-8 hover:border-sky-400/40 transition-colors"
-          style="background-color: #0d1f3c;"
-        >
-          <div class="w-12 h-12 rounded-xl bg-sky-400/10 flex items-center justify-center mb-6 group-hover:bg-sky-400/20 transition-colors">
-            <svg class="w-6 h-6 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Availability -->
+  <section class="py-16 border-t border-slate-200 dark:border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Location &amp; Availability</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <div class="flex flex-col border border-slate-200 dark:border-white/10 rounded-2xl p-6 bg-slate-50 dark:bg-white/5">
+          <div class="w-8 h-8 rounded-lg bg-[#2563EB]/10 flex items-center justify-center mb-4">
+            <svg class="w-4 h-4 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
           </div>
-          <h2 class="text-xl font-bold text-white mb-2 group-hover:text-sky-300 transition-colors">Email</h2>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            For formal enquiries, consulting proposals, or longer-form conversations.
-            I aim to reply within one business day.
-          </p>
-          <div class="mt-auto">
-            <p class="text-sky-400 text-sm font-medium break-all">{email}</p>
-            <div class="flex items-center gap-2 text-sky-400 text-sm font-medium mt-2">
-              <span>Send an email</span>
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </div>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- What to expect -->
-  <section class="py-16 border-t border-white/10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-bold text-white mb-10">What to include in your message</h2>
-      <div class="grid sm:grid-cols-3 gap-6 max-w-3xl">
-        {[
-          {
-            title: 'Who you are',
-            desc: 'Your name, company, and role — or what stage you\'re at in your career if reaching out for coaching.',
-          },
-          {
-            title: 'What you need',
-            desc: 'A brief description of what you\'re working on or what kind of support you\'re looking for.',
-          },
-          {
-            title: 'Timeline',
-            desc: 'When you need this — helps me give you a realistic picture of availability.',
-          },
-        ].map(item => (
-          <div>
-            <h3 class="text-white font-semibold mb-2">{item.title}</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Location note -->
-  <section class="pb-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="border border-white/10 rounded-xl p-6 flex items-start gap-4 max-w-lg" style="background-color: #0d1f3c;">
-        <svg class="w-5 h-5 text-sky-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-        <div>
-          <p class="text-white font-semibold text-sm mb-1">Based in Jakarta, Indonesia</p>
-          <p class="text-slate-400 text-sm">GMT+7. I'm available for remote engagements globally and in-person meetings across Greater Jakarta.</p>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">Based in</p>
+          <p class="text-slate-900 dark:text-white font-semibold text-sm">Jakarta, Indonesia</p>
+          <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Open to WFO &amp; hybrid roles</p>
         </div>
+
+        <div class="flex flex-col border border-slate-200 dark:border-white/10 rounded-2xl p-6 bg-slate-50 dark:bg-white/5">
+          <div class="w-8 h-8 rounded-lg bg-[#2563EB]/10 flex items-center justify-center mb-4">
+            <svg class="w-4 h-4 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">Timezone</p>
+          <p class="text-slate-900 dark:text-white font-semibold text-sm">WIB · UTC+7</p>
+          <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Western Indonesia Time</p>
+        </div>
+
+        <div class="flex flex-col border border-slate-200 dark:border-white/10 rounded-2xl p-6 bg-slate-50 dark:bg-white/5">
+          <div class="w-8 h-8 rounded-lg bg-[#2563EB]/10 flex items-center justify-center mb-4">
+            <svg class="w-4 h-4 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
+            </svg>
+          </div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">Remote</p>
+          <p class="text-slate-900 dark:text-white font-semibold text-sm">Open to remote</p>
+          <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">Comfortable with async work</p>
+        </div>
+
+        <div class="flex flex-col border border-slate-200 dark:border-white/10 rounded-2xl p-6 bg-slate-50 dark:bg-white/5">
+          <div class="w-8 h-8 rounded-lg bg-[#2563EB]/10 flex items-center justify-center mb-4">
+            <svg class="w-4 h-4 text-[#2563EB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+            </svg>
+          </div>
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">Relocation</p>
+          <p class="text-slate-900 dark:text-white font-semibold text-sm">SG &amp; KL open</p>
+          <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">18–24 month horizon</p>
+        </div>
+
       </div>
     </div>
   </section>
 
 </Layout>
+
+<script>
+  const copyBtn = document.getElementById('copy-email-btn');
+  const copyIcon = document.getElementById('copy-icon');
+  const checkIcon = document.getElementById('check-icon');
+
+  copyBtn?.addEventListener('click', async () => {
+    const email = copyBtn.getAttribute('data-email');
+    if (!email) return;
+
+    try {
+      await navigator.clipboard.writeText(email);
+      copyIcon?.classList.add('hidden');
+      checkIcon?.classList.remove('hidden');
+
+      setTimeout(() => {
+        copyIcon?.classList.remove('hidden');
+        checkIcon?.classList.add('hidden');
+      }, 2000);
+    } catch {
+      // Fallback for older browsers
+      const textarea = document.createElement('textarea');
+      textarea.value = email;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+
+      copyIcon?.classList.add('hidden');
+      checkIcon?.classList.remove('hidden');
+
+      setTimeout(() => {
+        copyIcon?.classList.remove('hidden');
+        checkIcon?.classList.add('hidden');
+      }, 2000);
+    }
+  });
+</script>
