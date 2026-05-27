@@ -26,7 +26,7 @@ phoneScreensLabel: "BAF Mobile — Payment Gateway Feature"
 | **Role** | Product Manager (Official Title: Product Owner & UI/UX Specialist) owning payment feature roadmap |
 | **Timeline** | Q3 2023 – Q1 2024 |
 | **Team** | 1 PM (me), 3 Backend Engineers, 4 Mobile Engineers, 1 QA, 1 Designer |
-| **Stakeholders** | VP Product, Finance Operations, Compliance, AyoConnect partner team |
+| **Stakeholders** | Head of Product, Engineering Leads, Finance Operations, Compliance, AyoConnect partner team |
 
 BAF Mobile serves hundreds of thousands of active borrowers making monthly loan repayments. The existing payment infrastructure relied on a single payment channel with limited payment method coverage, creating friction for customers who preferred e-wallets and virtual accounts. Leadership approved integrating AyoConnect as a payment gateway to expand payment method options and improve collection rates.
 

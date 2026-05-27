@@ -18,7 +18,7 @@ order: 3
 | **Role** | Product Manager (Official Title: Product Owner & UI/UX Specialist) responsible for delivery process across 3 engineering teams |
 | **Timeline** | September 2023 – Present |
 | **Team** | 3 engineering squads (19 engineers total), no Scrum Master, no BA, no TPM |
-| **Stakeholders** | VP Engineering, VP Product, Business Unit Heads, Engineering Leads |
+| **Stakeholders** | Head of Engineering, Head of Product, Business Unit Heads, Engineering Leads |
 
 When I joined BAF's product team, the organization was in a transitional state. They had recently restructured from a project-based to a product-based model, but the delivery processes hadn't caught up. There was no consistent sprint cadence, no standardized way to translate business requirements into development-ready specifications, and no visibility into delivery timelines for stakeholders.
 
