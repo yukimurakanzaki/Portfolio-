@@ -1,0 +1,89 @@
+---
+interface PhoneScreen {
+  src: string;
+  alt: string;
+}
+
+interface Props {
+  screens: [PhoneScreen, PhoneScreen, PhoneScreen]; // [left, center, right]
+  label?: string;
+}
+
+const { screens, label } = Astro.props;
+const [left, center, right] = screens;
+---
+
+<div class="relative w-full flex items-end justify-center gap-4 sm:gap-6 py-10 select-none" aria-hidden="true">
+  <!-- Glow backdrop -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <div class="w-64 h-64 rounded-full bg-[#2563EB] opacity-[0.08] blur-[80px]"></div>
+  </div>
+
+  <!-- Left phone -->
+  <div
+    class="animate-float relative flex-shrink-0"
+    style="--phone-tilt: -7deg; --float-delay: 0.4s; transform-origin: bottom center;"
+  >
+    <div class="w-[140px] sm:w-[160px] rounded-[28px] overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-black/50" style="transform: rotate(-7deg);">
+      <div class="bg-[#1a1a2e] h-5 flex items-center justify-center">
+        <div class="w-16 h-1.5 rounded-full bg-white/20"></div>
+      </div>
+      <img
+        src={left.src}
+        alt={left.alt}
+        class="w-full block"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="bg-[#1a1a2e] h-4"></div>
+    </div>
+  </div>
+
+  <!-- Center phone (featured) -->
+  <div
+    class="animate-float relative flex-shrink-0 z-10"
+    style="--phone-tilt: 0deg; --float-delay: 0s;"
+  >
+    <!-- Glow ring behind center phone -->
+    <div class="absolute -inset-3 rounded-[36px] bg-[#2563EB]/20 blur-xl pointer-events-none"></div>
+    <div class="relative w-[170px] sm:w-[195px] rounded-[32px] overflow-hidden ring-1 ring-[#2563EB]/30 shadow-2xl shadow-[#2563EB]/20">
+      <div class="bg-[#1a1a2e] h-6 flex items-center justify-center">
+        <div class="w-16 h-1.5 rounded-full bg-white/20"></div>
+      </div>
+      <img
+        src={center.src}
+        alt={center.alt}
+        class="w-full block"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="bg-[#1a1a2e] h-5 flex items-center justify-center gap-4">
+        <div class="w-4 h-4 rounded-full border border-white/20"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right phone -->
+  <div
+    class="animate-float relative flex-shrink-0"
+    style="--phone-tilt: 7deg; --float-delay: 0.8s;"
+  >
+    <div class="w-[140px] sm:w-[160px] rounded-[28px] overflow-hidden ring-1 ring-white/10 shadow-2xl shadow-black/50" style="transform: rotate(7deg);">
+      <div class="bg-[#1a1a2e] h-5 flex items-center justify-center">
+        <div class="w-16 h-1.5 rounded-full bg-white/20"></div>
+      </div>
+      <img
+        src={right.src}
+        alt={right.alt}
+        class="w-full block"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="bg-[#1a1a2e] h-4"></div>
+    </div>
+  </div>
+</div>
+
+{label && (
+  <p class="text-center text-xs text-slate-500 dark:text-slate-500 font-mono tracking-wider uppercase mt-2 mb-6">{label}</p>
+)}

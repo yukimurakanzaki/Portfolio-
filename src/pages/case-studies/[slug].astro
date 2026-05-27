@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import PhoneMockupGroup from '../../components/PhoneMockupGroup.astro';
 
 export async function getStaticPaths() {
   const caseStudies = await getCollection('case-studies');
@@ -38,6 +39,16 @@ const nextEntry = allEntries[nextIndex];
         </div>
       </div>
     </header>
+
+    <!-- Phone mockup showcase (if screens provided) -->
+    {entry.data.phoneScreens && (
+      <div class="mb-12 -mx-4 sm:-mx-6 lg:-mx-8 bg-slate-950 dark:bg-black/30 rounded-2xl overflow-hidden px-4 sm:px-6 lg:px-8 pt-2">
+        <PhoneMockupGroup
+          screens={entry.data.phoneScreens as [any, any, any]}
+          label={entry.data.phoneScreensLabel}
+        />
+      </div>
+    )}
 
     <!-- Rendered markdown content -->
     <div class="prose-content">

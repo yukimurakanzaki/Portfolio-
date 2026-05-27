@@ -7,6 +7,14 @@ tags: ["0-to-1", "Platform", "Delivery"]
 readTime: "6 min read"
 slug: "rebuilding-fintech-lending-platform"
 order: 1
+phoneScreens:
+  - src: "/images/products/danamas/onboarding.jpg"
+    alt: "Danamas lender onboarding showing curated investment products"
+  - src: "/images/products/danamas/dashboard.jpg"
+    alt: "Danamas lender dashboard showing Dana Siaga and Alokasi Investasi"
+  - src: "/images/products/danamas/reksadana.jpg"
+    alt: "Danamas Reksadana product list with returns and investment details"
+phoneScreensLabel: "Danamas Lender Platform — Rebuilt on React/Golang"
 ---
 
 ## Context
@@ -18,7 +26,7 @@ order: 1
 | **Role** | Digital Product Manager owning the full lender-side product |
 | **Timeline** | August 2022 – September 2023 |
 | **Team** | 1 PM (me), 4 Backend Engineers (Golang), 3 Frontend Engineers (React), 2 QA, 1 Designer |
-| **Stakeholders** | CTO, Head of Lending Operations, Compliance, OJK regulatory body |
+| **Stakeholders** | CPO, CFO, CTO, Head of Lending Operations, Compliance, OJK regulatory body |
 
 Danamas operated a P2P lending platform connecting lenders (both institutional and retail) with borrowers seeking personal and SME loans. The lender-facing platform — where lenders browse available loans, commit funds, and track portfolio performance — was built on a legacy Java monolith with a server-rendered JSP frontend circa 2017.
 

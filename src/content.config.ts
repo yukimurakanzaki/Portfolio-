@@ -12,6 +12,8 @@ const caseStudies = defineCollection({
     readTime: z.string().regex(/^\d+ min read$/),
     slug: z.string().min(1).max(80).regex(/^[a-z0-9-]+$/),
     order: z.number().int().min(1),
+    phoneScreens: z.array(z.object({ src: z.string(), alt: z.string() })).length(3).optional(),
+    phoneScreensLabel: z.string().optional(),
   }),
 });
 

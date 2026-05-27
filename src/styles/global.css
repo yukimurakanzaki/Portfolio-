@@ -1,14 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy-950: #07111f;
-  --color-navy-900: #0d1f3c;
-  --color-navy-800: #112240;
-  --color-navy-700: #1a3358;
-  --color-navy-600: #244176;
-  --color-accent: #38bdf8;
-  --color-accent-dark: #0ea5e9;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --color-accent: #2563EB;
+  --font-sans: 'Outfit', system-ui, sans-serif;
 }
 
 @layer base {
@@ -16,9 +10,29 @@
     scroll-behavior: smooth;
   }
 
-  body {
-    background-color: var(--color-navy-950);
-    color: #e2e8f0;
-    font-family: var(--font-sans);
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(var(--stagger-index, 0) * 80ms);
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(var(--phone-tilt, 0deg)); }
+    50% { transform: translateY(-12px) rotate(var(--phone-tilt, 0deg)); }
+  }
+
+  .animate-float {
+    animation: float 3.5s ease-in-out infinite;
+    animation-delay: var(--float-delay, 0s);
   }
 }
