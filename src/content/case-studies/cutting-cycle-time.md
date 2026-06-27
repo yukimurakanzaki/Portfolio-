@@ -1,8 +1,8 @@
 ---
-title: "Cutting Requirement-to-Development Cycle Time by 50%"
+title: "Cutting Requirement-to-Development Cycle Time in Half"
 company: "PT Bussan Auto Finance (BAF)"
 subtitle: "Product Manager (Official Title: Product Owner & UI/UX Specialist) · Sep 2023 – Present"
-summary: "Built Agile delivery infrastructure and sprint governance from scratch across 3 teams — reducing BRD-to-development cycle time by 50%."
+summary: "Built Agile delivery infrastructure and sprint governance from scratch across 3 teams — roughly halving BRD-to-development cycle time."
 tags: ["Process", "Delivery"]
 readTime: "5 min read"
 slug: "cutting-cycle-time"
@@ -17,49 +17,49 @@ order: 3
 | **Product** | BAF's digital product portfolio (Mobile App, Web Portal, Internal Tools) |
 | **Role** | Product Manager (Official Title: Product Owner & UI/UX Specialist) responsible for delivery process across 3 engineering teams |
 | **Timeline** | September 2023 – Present |
-| **Team** | 3 engineering squads (19 engineers total), no Scrum Master, no BA, no TPM |
-| **Stakeholders** | Head of Engineering, Head of Product, Business Unit Heads, Engineering Leads |
+| **Team** | Three engineering squads, without dedicated Scrum Master, BA, or TPM support |
+| **Stakeholders** | Engineering and Product leadership, Business Unit Heads, Engineering Leads |
 
-When I joined BAF's product team, the organization was in a transitional state. They had recently restructured from a project-based to a product-based model, but the delivery processes hadn't caught up. There was no consistent sprint cadence, no standardized way to translate business requirements into development-ready specifications, and no visibility into delivery timelines for stakeholders.
+When I joined BAF's product team, the organization was in the middle of a healthy transition — it had recently restructured from a project-based to a product-based model, and the delivery processes were still maturing to match. There was no consistent sprint cadence yet, no standardized way to translate business requirements into development-ready specifications, and limited visibility into delivery timelines for stakeholders.
 
-The result: business stakeholders would submit a Business Requirements Document (BRD), and it would take an average of 6 weeks before engineering began development — with no predictability on when work would actually start or finish.
+The result: business stakeholders would submit a Business Requirements Document (BRD), and it would take several weeks before engineering began development — with little predictability on when work would actually start or finish.
 
 ## Problem
 
-The 6-week BRD-to-development cycle time was a symptom of several interconnected process failures:
+The lengthy BRD-to-development cycle time was a symptom of several interconnected process gaps:
 
-1. **No refinement process** — BRDs arrived as 20-40 page documents written in business language with no technical decomposition. Engineers had to interpret requirements themselves, leading to back-and-forth clarification cycles that consumed 2-3 weeks alone.
+1. **No refinement process** — BRDs arrived as lengthy documents written in business language with no technical decomposition. Engineers had to interpret requirements themselves, leading to back-and-forth clarification cycles that consumed a large chunk of the timeline.
 
 2. **No sprint structure** — Teams worked in an ad-hoc manner. There was no sprint planning, no backlog grooming, and no predictable delivery cadence. Work started when someone decided it was important enough to escalate.
 
-3. **No capacity planning** — Without sprint velocity data, nobody could answer "when will this be done?" Business stakeholders escalated constantly because they had no visibility into engineering capacity or priorities.
+3. **No capacity planning** — Without sprint velocity data, nobody could reliably answer "when will this be done?" Business stakeholders escalated frequently because they had limited visibility into engineering capacity or priorities.
 
 4. **No definition of ready** — Requirements entered development in varying states of completeness. Engineers frequently discovered missing acceptance criteria, undefined edge cases, or unresolved dependencies mid-sprint, causing context-switching and rework.
 
-5. **No cross-team coordination** — The 3 squads had interdependencies (shared APIs, shared databases) but no mechanism to identify or resolve conflicts before they became blockers.
+5. **No cross-team coordination** — The squads had interdependencies (shared APIs, shared databases) but no mechanism to identify or resolve conflicts before they became blockers.
 
 ## Approach
 
 ### Step 1: Assess and Baseline
 
-Before changing anything, I spent 3 weeks measuring the current state:
+Before changing anything, I spent a few weeks measuring the current state:
 
-- Tracked 15 recent features from BRD submission to first commit, documenting every handoff and wait state
-- Identified that 60% of the 6-week cycle was **wait time** (waiting for clarification, waiting for prioritization, waiting for availability) — not active work
-- Interviewed all 3 engineering leads and 5 business stakeholders to understand pain points from both sides
+- Tracked a sample of recent features from BRD submission to first commit, documenting every handoff and wait state
+- Found that the majority of the cycle was **wait time** (waiting for clarification, prioritization, or availability) — not active work
+- Interviewed the engineering leads and business stakeholders to understand pain points from both sides
 - Mapped the informal process that existed (even if undocumented) to understand what was working vs. what was friction
 
 **Key insight**: The problem wasn't engineering speed — it was the absence of a structured intake and refinement process that created unnecessary wait states.
 
 ### Step 2: Design the Sprint Framework
 
-I designed and implemented a lightweight Agile framework tailored to BAF's context (no dedicated Scrum Master, engineers resistant to "heavy process"):
+I designed and implemented a lightweight Agile framework tailored to BAF's context (no dedicated Scrum Master, engineers wary of "heavy process"):
 
-**Sprint cadence**: 2-week sprints synchronized across all 3 teams, with aligned ceremonies:
-- **Monday Week 1**: Sprint Planning (1.5 hours per team)
-- **Friday Week 1**: Backlog Refinement (1 hour per team)
-- **Friday Week 2**: Sprint Review + Retro (1 hour per team)
-- **Daily**: 15-minute standup (async on Slack for remote days)
+**Sprint cadence**: 2-week sprints synchronized across all teams, with aligned ceremonies:
+- **Monday Week 1**: Sprint Planning
+- **Friday Week 1**: Backlog Refinement
+- **Friday Week 2**: Sprint Review + Retro
+- **Daily**: short standup (async on chat for remote days)
 
 **Definition of Ready** (DoR) — a checklist that every ticket must satisfy before entering a sprint:
 - User story with acceptance criteria
@@ -79,47 +79,47 @@ I designed and implemented a lightweight Agile framework tailored to BAF's conte
 
 The biggest cycle time reduction came from creating a structured refinement pipeline between BRD submission and sprint entry:
 
-**Week 1 (Intake)**: I receive BRD, conduct initial feasibility assessment, identify questions and gaps, schedule stakeholder clarification session.
+**Stage 1 (Intake)**: I receive the BRD, conduct an initial feasibility assessment, identify questions and gaps, and schedule a stakeholder clarification session.
 
-**Week 2 (Decomposition)**: Break BRD into user stories with acceptance criteria. Technical spike if needed. Dependency mapping across teams.
+**Stage 2 (Decomposition)**: Break the BRD into user stories with acceptance criteria. Technical spike if needed. Dependency mapping across teams.
 
-**Week 3 (Ready for Sprint)**: Stories meet DoR, estimated by team, prioritized in backlog. Ready for next sprint planning.
+**Stage 3 (Ready for Sprint)**: Stories meet the DoR, are estimated by the team, and prioritized in the backlog — ready for the next sprint planning.
 
-This 3-week pipeline replaced the previous unstructured 6-week drift. The key difference: every stage has a clear owner, a clear output, and a clear SLA.
+This structured pipeline replaced the previous unstructured drift. The key difference: every stage has a clear owner, a clear output, and a clear SLA.
 
 ### Step 4: Implement Visibility and Governance
 
 To maintain stakeholder trust and sustain the new process:
 
 - **Jira board** configured with swim lanes per team, visible to all stakeholders
-- **Weekly status email** to VP Product and business unit heads showing: what shipped last week, what's in progress, what's coming next sprint, and any blockers
+- **Weekly status email** to product leadership and business unit heads showing what shipped, what's in progress, what's coming next sprint, and any blockers
 - **Monthly delivery metrics** report: velocity per team, cycle time trend, scope change rate, blocker resolution time
-- **Quarterly retro** with all 3 teams together to identify cross-team process improvements
+- **Quarterly retro** with all teams together to identify cross-team process improvements
 
 ## Outcome
 
-- **BRD-to-development cycle time reduced from 6 weeks to 3 weeks** (50% reduction) within 4 months of implementation
-- **Sprint predictability** reached 82% (stories planned vs. stories completed) by Month 3, up from effectively 0% (no sprints existed)
-- **Stakeholder escalations reduced by 70%** — visibility into delivery timelines eliminated most "when will this be done?" interruptions
-- **Zero missed regulatory deadlines** in the 6 months following implementation (previously averaged 1 missed deadline per quarter)
-- **Engineering satisfaction** improved — retro feedback consistently cited "clarity on what to work on" and "fewer mid-sprint changes" as top improvements
-- **Cross-team blockers** reduced from average 3 per sprint to 0.5 per sprint through the dependency identification step in refinement
+- **Roughly halved BRD-to-development cycle time** within a few months of implementation
+- **Sprint predictability** went from effectively none (no sprints existed) to consistently high within months
+- **Stakeholder escalations dropped sharply** — visibility into delivery timelines eliminated most "when will this be done?" interruptions
+- **Consistently met regulatory deadlines** in the months following implementation
+- **Engineering satisfaction improved** — retro feedback consistently cited "clarity on what to work on" and "fewer mid-sprint changes" as top improvements
+- **Cross-team blockers became rare**, thanks to the dependency identification step in refinement
 
 ## Reflection
 
 **What I'd Do Differently:**
 
-I would have introduced the Definition of Ready more gradually. Rolling it out fully in Week 1 created initial friction — teams felt like I was adding bureaucracy. In hindsight, starting with just 2-3 DoR criteria and expanding over 2 months as teams saw the value would have reduced resistance and built buy-in more organically.
+I would have introduced the Definition of Ready more gradually. Rolling it out fully at once created initial friction — teams felt like I was adding bureaucracy. In hindsight, starting with just a few DoR criteria and expanding over time as teams saw the value would have reduced resistance and built buy-in more organically.
 
-I'd also invest earlier in automation. For the first 3 months, I was manually tracking cycle time metrics in a spreadsheet. Building a Jira dashboard with automated cycle time calculations from Day 1 would have freed up 3-4 hours per week and given stakeholders self-serve access to delivery data.
+I'd also invest earlier in automation. For the first few months, I was manually tracking cycle time metrics in a spreadsheet. Building a Jira dashboard with automated cycle time calculations from the start would have freed up several hours per week and given stakeholders self-serve access to delivery data.
 
-Finally, I underestimated the importance of celebrating wins publicly. The teams were doing significantly better work with the new process, but I didn't create enough visibility for their improvements with senior leadership. More deliberate "show and tell" moments would have reinforced the behavior change and built engineering team morale.
+Finally, I underestimated the importance of celebrating wins publicly. The teams were doing significantly better work with the new process, but I didn't create enough visibility for their improvements with senior leadership. More deliberate "show and tell" moments would have reinforced the behavior change and built team morale.
 
 **What This Demonstrates:**
 
 - Ability to diagnose process problems through data and observation rather than assumptions
 - Designing lightweight Agile frameworks appropriate to organizational context (no SM/BA/TPM)
-- Change management — introducing process change to resistant teams by demonstrating value incrementally
-- Cross-functional coordination across 3 engineering teams with interdependencies
+- Change management — introducing process change to skeptical teams by demonstrating value incrementally
+- Cross-functional coordination across multiple engineering teams with interdependencies
 - Metrics-driven approach to process improvement with clear before/after measurement
 - Stakeholder management — converting escalation-driven communication into structured, proactive visibility
