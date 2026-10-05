@@ -2,23 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Services" description="PM consulting and portfolio building services for professionals in Indonesia.">
+<Layout title="Services" description="Product leadership focus areas for fintech teams evaluating Muhammad Adi Putra for Senior or Lead PM roles.">
 
   <!-- Header -->
   <section class="relative py-24 overflow-hidden border-b border-slate-200 dark:border-white/10">
-    <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#2563EB]/10 rounded-full filter blur-[120px] -z-10 pointer-events-none"></div>
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#3B6EEF]/10 rounded-full filter blur-[120px] -z-10 pointer-events-none"></div>
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <p class="text-[#2563EB] dark:text-blue-400 font-semibold text-xs uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse flex-shrink-0"></span>
-        Services & Mentorship
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <p class="text-[#3B6EEF] dark:text-blue-400 font-semibold text-[11px] sm:text-xs uppercase tracking-[0.12em] sm:tracking-[0.2em] mb-4 flex items-center gap-2 max-w-[22rem] sm:max-w-full break-words">
+        <span class="w-2 h-2 rounded-full bg-[#3B6EEF] animate-pulse flex-shrink-0"></span>
+        Product Leadership
       </p>
-      <h1 class="text-4xl sm:text-6xl font-extrabold mb-6 text-slate-900 dark:text-white tracking-tight">
-        How I can help you.
+      <h1 class="text-3xl sm:text-6xl font-extrabold mb-6 text-slate-900 dark:text-white tracking-tight max-w-[22rem] sm:max-w-full">
+        Where I create leverage.
       </h1>
-      <p class="text-slate-600 dark:text-slate-300 text-lg max-w-2xl leading-relaxed">
-        Whether you're a company that needs product leadership or a professional looking to break into PM —
-        I offer focused, practical support.
+      <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-[22rem] sm:max-w-2xl leading-relaxed break-words">
+        For fintech teams evaluating senior product talent, these are the operating modes where I am strongest.
       </p>
     </div>
   </section>
@@ -28,31 +27,30 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-8">
 
-        <!-- Service 1: PM Consulting -->
-        <a href="/contact" class="group relative border border-slate-200 dark:border-white/10 rounded-3xl p-8 bg-slate-50 dark:bg-white/[0.03] hover:bg-white dark:hover:bg-white/[0.07] hover:border-[#2563EB]/50 hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.15)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 block focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#0f172a]">
-          <div class="w-12 h-12 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/15 flex items-center justify-center mb-6">
-            <svg class="w-5 h-5 text-[#2563EB] dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <!-- Service 1: Senior PM / Lead PM -->
+        <a href="/contact" class="group relative border border-slate-200 dark:border-white/10 rounded-2xl p-6 sm:p-8 bg-slate-50 dark:bg-white/[0.03] hover:bg-white dark:hover:bg-white/[0.07] hover:border-[#3B6EEF]/50 hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.15)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 block focus:outline-none focus:ring-2 focus:ring-[#3B6EEF] focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#060610] overflow-hidden">
+          <div class="w-12 h-12 rounded-xl bg-[#3B6EEF]/10 border border-[#3B6EEF]/15 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-[#3B6EEF] dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
           </div>
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">PM Consulting</h2>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">Senior / Lead PM</h2>
           <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
-            Embedded product leadership for startups and scale-ups in Indonesia.
-            I work alongside your team to sharpen strategy, improve discovery processes,
-            and accelerate delivery.
+            End-to-end product ownership for fintech teams that need someone who can align stakeholders,
+            de-risk delivery, and move regulated products from ambiguity to production.
           </p>
 
           <ul class="space-y-3 mb-8">
             {[
-              'Product strategy & roadmap development',
-              'Discovery workshops and user research facilitation',
-              'PRD writing and stakeholder alignment support',
-              'Sprint planning and backlog prioritization',
-              'OKR setting and metrics frameworks',
-              'Interim or fractional PM engagements',
+              'Product strategy and roadmap ownership',
+              'Discovery, PRD shaping, and stakeholder alignment',
+              'Payments, lending, and internal platform delivery',
+              'Sprint governance and backlog prioritization',
+              'Risk, dependency, and release management',
+              'Outcome tracking across product and operations metrics',
             ].map(item => (
               <li class="flex items-start gap-3 text-slate-600 dark:text-slate-300 text-sm">
-                <svg class="w-4 h-4 text-[#2563EB] dark:text-blue-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg class="w-4 h-4 text-[#3B6EEF] dark:text-blue-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 {item}
@@ -61,10 +59,10 @@ import Layout from '../layouts/Layout.astro';
           </ul>
 
           <div class="border-t border-slate-200 dark:border-white/10 pt-5">
-            <p class="text-[#2563EB] dark:text-blue-400 text-xs font-semibold uppercase tracking-wider mb-1">Best for</p>
-            <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">Early-stage startups, fintech companies, and teams scaling their product function.</p>
-            <span class="inline-flex items-center gap-2 text-[#2563EB] dark:text-blue-400 text-sm font-semibold group-hover:gap-3 transition-all duration-300">
-              Get in touch
+            <p class="text-[#3B6EEF] dark:text-blue-400 text-xs font-semibold uppercase tracking-wider mb-1">Best for</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">Fintech hiring managers looking for a PM who can own both strategy and execution.</p>
+            <span class="inline-flex items-center gap-2 text-[#3B6EEF] dark:text-blue-400 text-sm font-semibold group-hover:gap-3 transition-all duration-300">
+              Start a hiring conversation
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -72,31 +70,30 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </a>
 
-        <!-- Service 2: Portfolio Building -->
-        <a href="/contact" class="group relative border border-slate-200 dark:border-white/10 rounded-3xl p-8 bg-slate-50 dark:bg-white/[0.03] hover:bg-white dark:hover:bg-white/[0.07] hover:border-[#2563EB]/50 hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.15)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 block focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#0f172a]">
-          <div class="w-12 h-12 rounded-xl bg-[#2563EB]/10 border border-[#2563EB]/15 flex items-center justify-center mb-6">
-            <svg class="w-5 h-5 text-[#2563EB] dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        <!-- Service 2: Fractional Advisory -->
+        <a href="/contact" class="group relative border border-slate-200 dark:border-white/10 rounded-2xl p-6 sm:p-8 bg-slate-50 dark:bg-white/[0.03] hover:bg-white dark:hover:bg-white/[0.07] hover:border-[#3B6EEF]/50 hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.15)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 block focus:outline-none focus:ring-2 focus:ring-[#3B6EEF] focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#060610] overflow-hidden">
+          <div class="w-12 h-12 rounded-xl bg-[#3B6EEF]/10 border border-[#3B6EEF]/15 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-[#3B6EEF] dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 8a6 6 0 01-12 0m12 0a6 6 0 00-12 0m12 0h2m-14 0H2m5 10h10m-5-4v4" />
             </svg>
           </div>
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">PM Portfolio Building</h2>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">Fractional Product Advisory</h2>
           <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
-            Helping professionals land their first or next PM role by building a compelling
-            portfolio that tells a clear story. From aspiring PMs to career-switchers and
-            experienced PMs who've never packaged their work properly.
+            Selective advisory for founders or product leaders who need practical help on product
+            discovery, delivery systems, fintech workflows, or AI-assisted PM operations.
           </p>
 
           <ul class="space-y-3 mb-8">
             {[
-              '1:1 portfolio review and feedback sessions',
-              'Case study structuring (problem → approach → outcome)',
-              'Resume and LinkedIn profile optimization',
-              'Mock PM interviews (product sense, execution, strategy)',
-              'Personal website setup and copy guidance',
-              'Job search strategy for the Indonesian market',
+              'Product discovery and scope shaping',
+              'BRD / PRD review for fintech and internal tools',
+              'Delivery process diagnosis and operating cadence',
+              'MVP prioritization and roadmap sequencing',
+              'AI workflow design for product teams',
+              'Stakeholder-ready product narratives',
             ].map(item => (
               <li class="flex items-start gap-3 text-slate-600 dark:text-slate-300 text-sm">
-                <svg class="w-4 h-4 text-[#2563EB] dark:text-blue-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg class="w-4 h-4 text-[#3B6EEF] dark:text-blue-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
                 {item}
@@ -105,10 +102,10 @@ import Layout from '../layouts/Layout.astro';
           </ul>
 
           <div class="border-t border-slate-200 dark:border-white/10 pt-5">
-            <p class="text-[#2563EB] dark:text-blue-400 text-xs font-semibold uppercase tracking-wider mb-1">Best for</p>
-            <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">Aspiring PMs, BA/analyst-to-PM transitions, and early-career PMs in Jakarta and Indonesia.</p>
-            <span class="inline-flex items-center gap-2 text-[#2563EB] dark:text-blue-400 text-sm font-semibold group-hover:gap-3 transition-all duration-300">
-              Get in touch
+            <p class="text-[#3B6EEF] dark:text-blue-400 text-xs font-semibold uppercase tracking-wider mb-1">Best for</p>
+            <p class="text-slate-500 dark:text-slate-400 text-sm mb-5">Founders, PM leads, or fintech operators who need senior product judgment without a long retainer.</p>
+            <span class="inline-flex items-center gap-2 text-[#3B6EEF] dark:text-blue-400 text-sm font-semibold group-hover:gap-3 transition-all duration-300">
+              Discuss an advisory scope
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -123,27 +120,27 @@ import Layout from '../layouts/Layout.astro';
   <!-- Process -->
   <section class="py-20 border-t border-slate-200 dark:border-white/10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-10 tracking-tight">How it works</h2>
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-10 tracking-tight">How conversations usually start</h2>
       <div class="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 dark:divide-white/10">
         {[
           {
             step: '01',
-            title: 'Intro call',
-            desc: 'We spend 30 minutes understanding your situation, goals, and what success looks like.',
+            title: 'Context',
+            desc: 'We clarify the role, product domain, team shape, and the problems you need solved.',
           },
           {
             step: '02',
-            title: 'Proposal',
-            desc: 'I send a clear scope, timeline, and pricing — no vague retainers or hidden extras.',
+            title: 'Fit',
+            desc: 'I map my fintech, payments, platform, and delivery experience against the product challenge.',
           },
           {
             step: '03',
-            title: 'Get to work',
-            desc: 'We execute with regular check-ins, async updates, and a clear definition of done.',
+            title: 'Next step',
+            desc: 'We move into interviews, a case discussion, or a scoped advisory conversation.',
           },
         ].map(step => (
           <div class="py-6 sm:py-0 sm:px-8 first:pl-0 last:pr-0">
-            <p class="text-[#2563EB] text-xs font-bold font-mono tracking-[0.15em] mb-3">{step.step}</p>
+            <p class="text-[#3B6EEF] text-xs font-bold font-mono tracking-[0.15em] mb-3">{step.step}</p>
             <h3 class="text-slate-900 dark:text-white font-bold text-lg mb-2 tracking-tight">{step.title}</h3>
             <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">{step.desc}</p>
           </div>
@@ -157,16 +154,16 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 p-8 sm:p-10 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.02]">
         <div>
-          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2 tracking-tight">Ready to start?</h2>
+          <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2 tracking-tight">Need a fintech PM who can operate close to delivery?</h2>
           <p class="text-slate-500 dark:text-slate-400 max-w-sm text-sm leading-relaxed">
-            Reach out via WhatsApp or email and we'll set up a 30-minute intro call.
+            Reach out by email or LinkedIn and we can set up a focused intro conversation.
           </p>
         </div>
         <a
           href="/contact"
-          class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#2563EB] hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-px flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#0f172a]"
+          class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#3B6EEF] hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-px flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-[#3B6EEF] focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#060610]"
         >
-          Get in Touch
+          Start a Conversation
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>

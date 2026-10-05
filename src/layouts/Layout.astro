@@ -8,7 +8,10 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Senior Product Manager — Jakarta' } = Astro.props;
+const { title, description = 'Senior Product Manager focused on fintech, payments, lending, and internal platforms in Jakarta.' } = Astro.props;
+const siteTitle = title === 'Home'
+  ? 'Muhammad Adi Putra | Fintech Product Manager'
+  : `${title} | Muhammad Adi Putra`;
 ---
 
 <!doctype html>
@@ -17,17 +20,18 @@ const { title, description = 'Senior Product Manager — Jakarta' } = Astro.prop
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <title>{title} | PM Portfolio</title>
+    <title>{siteTitle}</title>
     <!-- Open Graph / Social sharing -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://muhammadadiputra.com" />
-    <meta property="og:title" content={`${title} | PM Portfolio`} />
+    <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="https://muhammadadiputra.com/images/profile.jpg" />
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${title} | PM Portfolio`} />
+    <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://muhammadadiputra.com/images/profile.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -44,7 +48,8 @@ const { title, description = 'Senior Product Manager — Jakarta' } = Astro.prop
       })();
     </script>
   </head>
-  <body class="min-h-screen flex flex-col bg-white dark:bg-[#0f172a] text-slate-900 dark:text-slate-200 font-sans transition-colors">
+  <body class="min-h-screen flex flex-col bg-white dark:bg-[#060610] text-slate-900 dark:text-slate-200 font-sans transition-colors">
+    <div class="hidden dark:block fixed top-0 left-0 right-0 h-[2px] bg-[#3B6EEF] z-[60]"></div>
     <Nav currentPath={Astro.url.pathname} />
     <main class="flex-1">
       <slot />

@@ -1,5 +1,6 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
+import Logo from './Logo.astro';
 
 interface Props {
   currentPath: string;
@@ -17,22 +18,22 @@ const navLinks = [
 ];
 ---
 
-<header class="sticky top-0 z-50 border-b border-slate-200 dark:border-white/10 bg-white/90 dark:bg-[#0f172a]/90 backdrop-blur-sm">
+<header class="sticky top-0 z-50 border-b border-slate-200 dark:border-white/10 bg-white/90 dark:bg-[#060610]/90 backdrop-blur-sm">
   <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <a href="/" class="flex items-center gap-2.5 group">
-        <span class="w-8 h-8 rounded bg-[#2563EB] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">AP</span>
-        <span class="text-slate-900 dark:text-white font-semibold text-base tracking-tight group-hover:text-[#2563EB] transition-colors">Muhammad Adi Putra</span>
+        <Logo />
+        <span class="text-slate-900 dark:text-white font-semibold text-base tracking-tight group-hover:text-[#3B6EEF] transition-colors">Muhammad Adi Putra</span>
       </a>
       <div class="hidden md:flex items-center gap-1">
         {navLinks.map(link => (
           <a
             href={link.href}
             class:list={[
-              'px-3 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB]',
+              'px-3 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#3B6EEF]',
               currentPath === link.href
-                ? 'text-[#2563EB] font-semibold'
-                : 'text-slate-600 dark:text-slate-300 hover:text-[#2563EB] dark:hover:text-[#2563EB] hover:bg-slate-100 dark:hover:bg-white/5'
+                ? 'text-[#3B6EEF] font-semibold'
+                : 'text-slate-600 dark:text-slate-300 hover:text-[#3B6EEF] dark:hover:text-[#3B6EEF] hover:bg-slate-100 dark:hover:bg-white/5'
             ]}
           >
             {link.label}
@@ -42,7 +43,7 @@ const navLinks = [
       </div>
       <div class="flex items-center gap-2 md:hidden">
         <ThemeToggle />
-        <button id="mobile-menu-btn" class="p-2 rounded-md text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-[#2563EB]" aria-label="Toggle menu">
+        <button id="mobile-menu-btn" class="p-2 rounded-md text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-[#3B6EEF]" aria-label="Toggle menu">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -54,9 +55,9 @@ const navLinks = [
         <a
           href={link.href}
           class:list={[
-            'block px-3 py-2 rounded-md text-sm font-medium mb-1 transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB]',
+            'block px-3 py-2 rounded-md text-sm font-medium mb-1 transition-colors focus:outline-none focus:ring-2 focus:ring-[#3B6EEF]',
             currentPath === link.href
-              ? 'text-[#2563EB] border-l-2 border-[#2563EB] bg-blue-50 dark:bg-[#2563EB]/5'
+              ? 'text-[#3B6EEF] border-l-2 border-[#3B6EEF] bg-blue-50 dark:bg-[#3B6EEF]/5'
               : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-white/5'
           ]}
         >

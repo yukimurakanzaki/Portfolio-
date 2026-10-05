@@ -4,13 +4,41 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-accent: #2563EB;
+  --color-accent: #3B6EEF;
   --font-sans: 'Outfit', system-ui, sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  * {
+    min-width: 0;
+  }
+
+  @media (max-width: 640px) {
+    h1,
+    h2,
+    h3,
+    p,
+    li,
+    span {
+      overflow-wrap: anywhere;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    li {
+      max-width: calc(100vw - 4rem);
+    }
   }
 
   @keyframes fade-up {

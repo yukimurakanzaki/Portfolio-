@@ -1,0 +1,32 @@
+---
+---
+<svg class="w-8 h-8 flex-shrink-0 group-hover:scale-105 transition-transform duration-300" viewBox="0 0 34 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nexus-grad" x1="4" y1="4" x2="30" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B6EEF" />
+      <stop offset="50%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Outer soft glow on hover -->
+  <g class="opacity-0 group-hover:opacity-40 transition-opacity duration-300" filter="url(#glow)">
+    <path d="M6 25V12C6 7.58 9.58 4 14 4C18.42 4 22 7.58 22 12V25M22 14.5C22 10.36 25.36 7 29.5 7" stroke="url(#nexus-grad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Main logo path -->
+  <path 
+    d="M6 25V12C6 7.58 9.58 4 14 4C18.42 4 22 7.58 22 12V25M22 14.5C22 10.36 25.36 7 29.5 7" 
+    stroke="url(#nexus-grad)" 
+    stroke-width="3.5" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+  />
+
+  <!-- Interactive pulsating dot at the nexus center -->
+  <circle cx="14" cy="12" r="2" fill="#8B5CF6" class="animate-pulse" />
+</svg>
