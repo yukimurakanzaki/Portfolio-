@@ -1,8 +1,9 @@
 ---
-title: "Cutting Requirement-to-Development Cycle Time in Half"
+title: "Cutting requirement-to-development cycle time in half"
 company: "PT Bussan Auto Finance (BAF)"
 subtitle: "Product Manager (Official Title: Product Owner & UI/UX Specialist) · Sep 2023 – Present"
 summary: "Built Agile delivery infrastructure and sprint governance from scratch across 3 teams — roughly halving BRD-to-development cycle time."
+outcome: "Roughly halved BRD-to-development cycle time within a few months of implementation."
 tags: ["Process", "Delivery"]
 readTime: "5 min read"
 slug: "cutting-cycle-time"

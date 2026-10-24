@@ -1,0 +1,25 @@
+---
+// Click copies the address; falls back to mailto when JS or the clipboard is unavailable.
+import { site } from '../lib/site';
+const { class: cls = '' } = Astro.props;
+---
+<span class="copy-email">
+  <a href={`mailto:${site.email}`} class:list={['link', cls]} data-copy={site.email}>{site.email}</a>
+  <span class="field-note ml-3" role="status" aria-live="polite" data-copied></span>
+</span>
+
+<script>
+  document.querySelectorAll<HTMLAnchorElement>('[data-copy]').forEach((a) => {
+    const note = a.parentElement?.querySelector<HTMLElement>('[data-copied]');
+    a.addEventListener('click', async (e) => {
+      if (!navigator.clipboard) return;
+      e.preventDefault();
+      try {
+        await navigator.clipboard.writeText(a.dataset.copy ?? '');
+        if (note) { note.textContent = 'Copied'; setTimeout(() => (note.textContent = ''), 2200); }
+      } catch {
+        location.href = a.href;
+      }
+    });
+  });
+</script>

@@ -1,0 +1,16 @@
+---
+import { typo } from '../lib/site';
+const { rows } = Astro.props as { rows: { years: string; company: string; role: string; scope: string }[] };
+---
+<ul class="ledger">
+  {rows.map((r) => (
+    <li class="ledger-row">
+      <span class="field-note tnum">{r.years}</span>
+      <span>
+        <span class="block font-medium">{r.company}</span>
+        <span class="block t-small text-ink-2">{typo(r.role)}</span>
+      </span>
+      <span class="t-small text-ink-2">{typo(r.scope)}</span>
+    </li>
+  ))}
+</ul>

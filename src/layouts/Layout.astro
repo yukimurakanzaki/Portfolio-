@@ -6,9 +6,20 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description?: string;
+  meridian?: boolean;
 }
 
-const { title, description = 'Senior Product Manager — Jakarta' } = Astro.props;
+const {
+  title,
+  description = 'Product manager in Jakarta, working on payments, lending and internal platforms in regulated fintech.',
+  meridian = true,
+} = Astro.props;
+
+const siteTitle = title === 'Home'
+  ? 'Muhammad Adi Putra | Fintech Product Manager'
+  : `${title} | Muhammad Adi Putra`;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/og.png', Astro.site).href;
 ---
 
 <!doctype html>
@@ -17,38 +28,44 @@ const { title, description = 'Senior Product Manager — Jakarta' } = Astro.prop
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <title>{title} | PM Portfolio</title>
-    <!-- Open Graph / Social sharing -->
+    <title>{siteTitle}</title>
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://muhammadadiputra.com" />
-    <meta property="og:title" content={`${title} | PM Portfolio`} />
+    <meta property="og:site_name" content="Muhammad Adi Putra" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://muhammadadiputra.com/images/profile.jpg" />
-    <!-- Twitter / X Card -->
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${title} | PM Portfolio`} />
+    <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <!-- Theme init: runs before paint to prevent FOUC -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400&family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300&family=Instrument+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <script is:inline>
-      (function() {
-        const stored = localStorage.getItem('theme');
-        if (stored === 'light') {
-          document.documentElement.classList.remove('dark');
-        } else {
-          document.documentElement.classList.add('dark');
-          if (!stored) localStorage.setItem('theme', 'dark');
-        }
+      // Theme init runs before paint: dark is the default, light is opt-in.
+      (function () {
+        try {
+          if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
+        } catch (e) {}
       })();
     </script>
+    <slot name="head" />
   </head>
-  <body class="min-h-screen flex flex-col bg-white dark:bg-[#0f172a] text-slate-900 dark:text-slate-200 font-sans transition-colors">
+  <body class="min-h-screen flex flex-col">
+    <a href="#main" class="skip-link">Skip to content</a>
     <Nav currentPath={Astro.url.pathname} />
-    <main class="flex-1">
+    <main id="main" class="flex-1" tabindex="-1">
       <slot />
     </main>
-    <Footer />
+    <Footer meridian={meridian} />
   </body>
 </html>

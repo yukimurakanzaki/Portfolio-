@@ -1,228 +1,231 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import CaseStudyCard from '../components/CaseStudyCard.astro';
-import SkillTag from '../components/SkillTag.astro';
 import { getCollection } from 'astro:content';
+import { Picture } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import ScreenPlate from '../components/ScreenPlate.astro';
+import Ledger from '../components/Ledger.astro';
+import CopyEmail from '../components/CopyEmail.astro';
+import LocalTime from '../components/LocalTime.astro';
+import portrait from '../assets/profile.jpg';
+import { career } from '../data/career';
+import { site, cvSize, typo } from '../lib/site';
+import { sortStudies, studyMeta } from '../lib/study';
 
-const caseStudies = await getCollection('case-studies');
-const sortedCaseStudies = caseStudies.sort((a, b) => {
-  if (a.data.order !== b.data.order) return a.data.order - b.data.order;
-  return a.data.title.localeCompare(b.data.title);
-});
+const studies = sortStudies(await getCollection('case-studies'));
+const titleOf = (slug: string) => typo(studies.find((s) => s.data.slug === slug)?.data.title ?? '');
 
-const skillCategories = [
+// Each capability links to the case study that proves it.
+const capabilities = [
   {
-    name: 'Payments',
-    skills: ['Payment Gateway Integration', 'API Lifecycle Management', 'Virtual Account Flows', 'Bank Rail Integrations (BNI, Instamoney, AyoConnect)'],
+    name: 'Payment rails',
+    text: 'I scope, sequence and ship third-party payment integrations. One payment channel became several methods across banks and e-wallets.',
+    slug: 'shipping-payment-gateway-integration',
   },
   {
-    name: 'Product',
-    skills: ['Product Strategy', 'Roadmapping', 'Discovery & User Research', 'Feature Prioritization', 'Outcome Ownership'],
+    name: 'Lending platforms',
+    text: 'I led a lender platform’s move off an aging legacy system, with no data loss and no unplanned downtime while lending kept running.',
+    slug: 'rebuilding-fintech-lending-platform',
   },
   {
-    name: 'Delivery',
-    skills: ['Agile/Scrum', 'Sprint Governance', 'EPIC & Backlog Structuring', 'Release Management', 'Dependency Management'],
+    name: 'Delivery systems',
+    text: 'I built sprint governance from scratch across three squads, without dedicated Scrum Master, BA or TPM support, and roughly halved BRD-to-development cycle time.',
+    slug: 'cutting-cycle-time',
   },
   {
-    name: 'Domain',
-    skills: ['Fintech Lending', 'Multifinance', 'Consumer Mobile Apps', 'Internal OPS Platforms', 'Regulated Environments (OJK)'],
-  },
-  {
-    name: 'Tools',
-    skills: ['Jira', 'Figma', 'Confluence', 'Miro', 'Postman', 'Notion', 'Mixpanel (basic)', 'SQL (basic)', 'AI Productivity Tools'],
+    name: 'Zero to one',
+    text: 'As sole PM I took a personal finance tool to a cloud-syncing, multi-tenant beta in 8 days.',
+    slug: 'fi-dashboard-personal-to-product',
   },
 ];
+
+const tools = 'Jira, Figma, Confluence, Miro, Postman, Notion, Mixpanel (basic), SQL (basic), AI productivity tools';
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  jobTitle: 'Product Manager',
+  url: Astro.site?.href,
+  email: `mailto:${site.email}`,
+  sameAs: [site.linkedin],
+  address: { '@type': 'PostalAddress', addressLocality: 'Jakarta', addressCountry: 'ID' },
+  knowsAbout: ['Product management', 'Fintech', 'Payments', 'Lending'],
+};
 ---
 
-<Layout title="Home" description="Senior Product Manager in Jakarta — fintech, payments, internal platforms.">
+<Layout title="Home" description="Product manager in Jakarta. Payments, lending and internal platforms in regulated fintech. Open to Senior and Lead PM roles in Indonesia and SEA.">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(person)} />
 
-  <!-- Section 1: Hero -->
-  <section class="relative bg-[#0f172a] py-20 sm:py-28 overflow-hidden min-h-[100dvh] flex items-center">
-    <div class="absolute top-1/3 -left-32 w-[500px] h-[500px] bg-[#2563EB] rounded-full mix-blend-multiply filter blur-[200px] opacity-8 pointer-events-none"></div>
-
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-      <div class="grid lg:grid-cols-5 gap-12 items-center">
-        <!-- Text block -->
-        <div class="lg:col-span-3">
-          <p class="text-[#2563EB] font-semibold text-xs uppercase tracking-[0.2em] mb-5">
-            Product Manager · Fintech · Payments · Internal Platforms
-          </p>
-          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tight mb-6">
-            Muhammad<br />Adi Putra
-          </h1>
-          <p class="text-slate-400 text-lg sm:text-xl leading-relaxed mb-10 max-w-lg">
-            I own the full product lifecycle — from half-formed requirements to production — in regulated fintech environments.
-          </p>
-
-          <div class="flex flex-col sm:flex-row items-start gap-4">
-            <a
-              href="/case-studies"
-              class="inline-flex items-center justify-center px-7 py-3.5 bg-[#2563EB] hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-px shadow-lg shadow-[#2563EB]/20 focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 focus:ring-offset-[#0f172a]"
-            >
-              See my work
-            </a>
-            <a
-              href="/contact"
-              class="inline-flex items-center justify-center px-7 py-3.5 border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500 hover:bg-slate-800/60 font-semibold rounded-lg transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 focus:ring-offset-[#0f172a]"
-            >
-              Get in touch
-            </a>
-            <a
-              href="/MuhammadAdiPutra_CV.pdf"
-              download
-              class="inline-flex items-center justify-center gap-2 px-4 py-3.5 text-slate-400 hover:text-[#2563EB] font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB] rounded"
-            >
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-              CV
-            </a>
-          </div>
-        </div>
-
-        <!-- Profile photo -->
-        <div class="lg:col-span-2 flex justify-center lg:justify-end">
-          <div class="relative">
-            <div class="absolute -inset-3 rounded-full border border-[#2563EB]/15 pointer-events-none"></div>
-            <div class="absolute -inset-6 rounded-full border border-[#2563EB]/8 pointer-events-none"></div>
-            <img
-              src="/images/profile.jpg"
-              alt="Muhammad Adi Putra — Product Manager"
-              class="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full object-cover object-top ring-1 ring-[#2563EB]/25 shadow-2xl"
-            />
-          </div>
-        </div>
-      </div>
+  <!-- Hero -->
+  <section class="page grid12 pt-[clamp(2.5rem,6vw,5rem)] pb-[clamp(4rem,8vw,7rem)]">
+    <div class="col-span-12 flex flex-col gap-1 sm:flex-row sm:justify-between sm:gap-6 field-note">
+      <span>Product Manager — fintech, payments, lending</span>
+      <span>Jakarta {site.coords}<LocalTime sep /></span>
     </div>
+
+    <h1 class="t-hero col-span-12 mt-10 sm:mt-16 lg:col-span-9 lg:row-start-2">
+      I own regulated fintech products — from <em><span class="whitespace-nowrap">half-formed</span> requirements</em> to production.
+    </h1>
+
+    <p class="col-span-12 mt-8 flex items-center gap-3 lg:col-span-9 lg:row-start-3">
+      <span class="signal-dot" aria-hidden="true"></span>
+      <span>{site.status}</span>
+    </p>
+
+    <div class="col-span-12 mt-8 flex flex-wrap items-center gap-x-8 gap-y-5 lg:col-span-9 lg:row-start-4">
+      <a href="#work" class="btn">Selected work <span aria-hidden="true">↓</span></a>
+      <CopyEmail />
+      <a href={site.cv} download class="link">CV — PDF, {cvSize}</a>
+    </div>
+
+    <figure class="col-span-12 mt-14 max-w-[15rem] lg:col-start-10 lg:col-span-3 lg:row-start-2 lg:row-span-3 lg:mt-0 lg:max-w-none lg:self-end">
+      <Picture
+        src={portrait}
+        alt="Portrait of Muhammad Adi Putra"
+        widths={[320, 480, 717]}
+        sizes="(min-width: 1024px) 24vw, 15rem"
+        formats={['avif', 'webp']}
+        quality={70}
+        loading="eager"
+        class="block w-full"
+        style="aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); filter: grayscale(1) contrast(1.05);"
+      />
+      <figcaption class="field-note mt-3">Fig. 1 — Muhammad Adi Putra, Jakarta</figcaption>
+    </figure>
   </section>
 
-  <!-- Section 2: Case Study Highlights -->
-  {sortedCaseStudies.length > 0 && (
-    <section class="py-20 bg-white dark:bg-[#0f172a]">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-end justify-between mb-10">
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Case Study Highlights</h2>
-          <a href="/case-studies" class="text-[#2563EB] hover:text-blue-700 dark:hover:text-blue-400 text-sm font-medium transition-colors">
-            View all →
-          </a>
+  <div class="meridian">
+    <!-- §01 Selected work -->
+    <section id="work" class="section">
+      <div class="page grid12">
+        <div class="label-col lg:pt-2">
+          <p class="t-label">§01</p>
+          <p class="field-note mt-1">{studies.length} case studies</p>
         </div>
+        <div class="content-col"><h2 class="t-section">Selected work</h2></div>
+      </div>
 
-        <div class="flex flex-col gap-6">
-          {/* Featured first card */}
-          {sortedCaseStudies.slice(0, 1).map((study, i) => (
-            <div class="animate-fade-up" style={`--stagger-index: ${i}`}>
-              <CaseStudyCard
-                title={study.data.title}
-                company={study.data.company}
-                summary={study.data.summary}
-                tags={study.data.tags}
-                slug={study.data.slug}
-                featured={true}
-              />
-            </div>
-          ))}
-          {/* Remaining in 2-col */}
-          {sortedCaseStudies.length > 1 && (
-            <div class="grid md:grid-cols-2 gap-6">
-              {sortedCaseStudies.slice(1).map((study, i) => (
-                <div class="animate-fade-up" style={`--stagger-index: ${i + 1}`}>
-                  <CaseStudyCard
-                    title={study.data.title}
-                    company={study.data.company}
-                    summary={study.data.summary}
-                    tags={study.data.tags}
-                    slug={study.data.slug}
-                  />
+      <ol class="page mt-12">
+        {studies.map((study, i) => {
+          const m = studyMeta(study);
+          return (
+            <li class="index-row">
+              <a href={`/case-studies/${study.data.slug}`} class="index-link grid12">
+                <div class="label-col field-note tnum">
+                  <span class="block">{String(i + 1).padStart(2, '0')}</span>
+                  <span class="block">{study.data.readTime}</span>
                 </div>
-              ))}
-            </div>
-          )}
+                <div class="content-col grid gap-3">
+                  <div class="flex items-start justify-between gap-6">
+                    <h3 class="row-title" style={`view-transition-name: study-${study.data.slug}`}>{typo(study.data.title)}</h3>
+                    <span class="arrow t-section" aria-hidden="true">→</span>
+                  </div>
+                  <p class="field-note">{[m.company, m.role, m.years].filter(Boolean).join(' · ')}</p>
+                  {study.data.outcome && <p class="measure text-ink-2">{typo(study.data.outcome)}</p>}
+                </div>
+              </a>
+              {i === 0 && study.data.phoneScreens && (
+                <div class="grid12 mt-10">
+                  <div class="content-col max-w-[46rem]">
+                    <ScreenPlate screens={study.data.phoneScreens} />
+                  </div>
+                </div>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+
+      <div class="page mt-10 grid12">
+        <div class="content-col">
+          <a href="/case-studies" class="arrow-link"><span class="link-text">All case studies</span><span class="arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
-  )}
 
-  <!-- Section 3: Skills Snapshot -->
-  <section class="py-20 bg-slate-50 dark:bg-[#0f172a] border-t border-slate-200 dark:border-white/10">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight mb-10">Skills Snapshot</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {skillCategories.map(category => (
-          <div class="border-l-2 border-[#2563EB]/30 pl-4">
-            <h3 class="text-xs font-semibold uppercase tracking-[0.15em] text-[#2563EB] mb-3">{category.name}</h3>
-            <div class="flex flex-wrap gap-2">
-              {category.skills.map(skill => (
-                <SkillTag label={skill} />
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 4: StoryForge Callout -->
-  <section class="py-20 bg-white dark:bg-[#0f172a]">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="relative border border-slate-200 dark:border-white/10 rounded-2xl overflow-hidden">
-        <div class="grid md:grid-cols-2">
-          <div class="p-8 sm:p-10">
-            <p class="text-[#2563EB] text-xs font-semibold uppercase tracking-[0.15em] mb-3">Currently building</p>
-            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight mb-4">StoryForge.id</h2>
-            <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-              An AI-powered BRD analysis tool for Indonesian PMs — built solo alongside a full-time PM role. Stack: Next.js 14, Supabase, Anthropic API, Vercel.
-            </p>
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-              <span class="text-slate-500 dark:text-slate-400 text-sm font-medium">Approaching beta launch</span>
-            </div>
-          </div>
-          <div class="bg-slate-50 dark:bg-white/[0.03] border-t md:border-t-0 md:border-l border-slate-200 dark:border-white/10 p-8 sm:p-10 flex flex-col justify-center font-mono text-xs">
-            <p class="text-slate-400 dark:text-slate-500 mb-3">{"// Sample analysis output"}</p>
-            <p class="text-[#2563EB]">readinessScore: <span class="text-amber-500 dark:text-amber-400">74</span></p>
-            <p class="text-slate-500 dark:text-slate-400 mt-1">gaps: [</p>
-            <p class="text-slate-500 dark:text-slate-400 pl-4">"unclear user roles",</p>
-            <p class="text-slate-500 dark:text-slate-400 pl-4">"missing edge cases",</p>
-            <p class="text-slate-500 dark:text-slate-400 pl-4">"no rollback plan"</p>
-            <p class="text-slate-500 dark:text-slate-400">]</p>
-            <p class="text-amber-500 dark:text-amber-400 mt-3">status: "Perlu Klarifikasi"</p>
-          </div>
+    <!-- §02 Track record -->
+    <section class="section">
+      <div class="page grid12">
+        <div class="label-col lg:pt-2">
+          <p class="t-label">§02</p>
+          <p class="field-note mt-1 tnum">2017–present</p>
+        </div>
+        <div class="content-col">
+          <h2 class="t-section mb-12">Track record</h2>
+          <Ledger rows={career} />
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Section 5: CTA Strip -->
-  <section class="py-16 bg-[#2563EB]">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
-        <p class="text-white/95 text-xl sm:text-2xl font-semibold max-w-xs leading-snug">
-          Open to Senior PM roles in fintech · Jakarta &amp; SEA
-        </p>
-        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 flex-shrink-0">
-          <a
-            href="mailto:muhammadadiputra789@gmail.com"
-            class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#2563EB] font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-px focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2563EB]"
-          >
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            Email Me
-          </a>
-          <a
-            href="https://linkedin.com/in/m-adi-putra"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white/60 text-white font-semibold rounded-lg hover:bg-white/10 hover:border-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2563EB]"
-          >
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-            LinkedIn
-          </a>
+    <!-- §03 Where I'm strongest -->
+    <section class="section">
+      <div class="page grid12">
+        <div class="label-col lg:pt-2">
+          <p class="t-label">§03</p>
+          <p class="field-note mt-1">Each links to its proof</p>
+        </div>
+        <div class="content-col">
+          <h2 class="t-section mb-12">Where I’m strongest</h2>
+          <ul class="ledger">
+            {capabilities.map((c) => (
+              <li class="ledger-row cap-row">
+                <h3 class="font-serif text-[1.5rem] font-light leading-tight tracking-tight">{c.name}</h3>
+                <div>
+                  <p class="measure">{typo(c.text)}</p>
+                  <a href={`/case-studies/${c.slug}`} class="arrow-link t-small mt-3">
+                    <span class="link-text">{titleOf(c.slug)}</span><span class="arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <p class="field-note mt-8"><span class="text-ink">Tools</span> — {tools}</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- §04 Currently building -->
+    <section class="section">
+      <div class="page grid12">
+        <div class="label-col lg:pt-2">
+          <p class="t-label">§04</p>
+          <p class="field-note mt-1">Solo build, about 10 h a week</p>
+        </div>
+        <div class="content-col">
+          <h2 class="t-section">Currently building: StoryForge.id</h2>
+          <p class="t-lead measure mt-6">
+            An AI-powered tool that reads a BRD, flags the gaps and ambiguities, and drafts the clarification questions in Bahasa Indonesia, built for Indonesian product managers.
+          </p>
+          <p class="mt-6 flex flex-wrap items-baseline gap-x-4">
+            <span class="t-label">Status</span>
+            <span>In development, built alongside a full-time PM role.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- §05 Contact -->
+    <section id="contact" class="section">
+      <div class="page grid12">
+        <div class="label-col lg:pt-2">
+          <p class="t-label">§05</p>
+          <p class="field-note mt-1">Email, LinkedIn, CV</p>
+        </div>
+        <div class="content-col">
+          <h2 class="t-page" style="max-width: 18ch">If you’re hiring for senior fintech product work, write to me.</h2>
+          <p class="mt-12">
+            <CopyEmail class="font-serif font-light tracking-tight text-[clamp(1.25rem,5.4vw,3.5rem)] !decoration-ink-3" />
+          </p>
+          <p class="mt-8 flex items-center gap-3">
+            <span class="signal-dot" aria-hidden="true"></span>
+            <span>{site.status}</span>
+          </p>
+          <p class="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+            <a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="arrow-link"><span class="link-text">LinkedIn</span><span class="arrow" aria-hidden="true">→</span></a>
+            <a href={site.cv} download class="arrow-link"><span class="link-text">CV — PDF, {cvSize}</span><span class="arrow" aria-hidden="true">↓</span></a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>

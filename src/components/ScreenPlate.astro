@@ -1,0 +1,27 @@
+---
+// Static plate of real screenshots: straight, equal height, one radius, Fig. captions.
+import { Picture } from 'astro:assets';
+
+const { screens, label } = Astro.props as {
+  screens: { src: ImageMetadata; alt: string; caption?: string }[];
+  label?: string;
+};
+---
+<div>
+  <div class="plate">
+    {screens.map((s, i) => (
+      <figure>
+        <Picture
+          src={s.src}
+          alt={s.alt}
+          widths={[240, 360, 480]}
+          sizes="(min-width: 1024px) 240px, 30vw"
+          formats={['avif', 'webp']}
+          quality={70}
+        />
+        <figcaption class="field-note">Fig. {i + 1} — {s.caption ?? s.alt}</figcaption>
+      </figure>
+    ))}
+  </div>
+  {label && <p class="field-note mt-4">{label}</p>}
+</div>
