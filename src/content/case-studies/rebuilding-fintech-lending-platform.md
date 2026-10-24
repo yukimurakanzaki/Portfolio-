@@ -1,19 +1,23 @@
 ---
-title: "Rebuilding a Fintech Lending Platform from the Ground Up"
+title: "Rebuilding a fintech lending platform from the ground up"
 company: "PT Danamas (Sinarmas Group)"
 subtitle: "Digital Product Manager · Aug 2022 – Sep 2023"
 summary: "Led the full product lifecycle of migrating the Danamas Lender Platform from an aging legacy system to a modern web stack — without disrupting active lending operations."
+outcome: "Completed the full platform migration in just over a year, with no data loss and no unplanned downtime."
 tags: ["0-to-1", "Platform", "Delivery"]
 readTime: "6 min read"
 slug: "rebuilding-fintech-lending-platform"
 order: 1
 phoneScreens:
-  - src: "/images/products/danamas/onboarding.jpg"
+  - src: "../../assets/products/danamas/onboarding.jpg"
     alt: "Danamas lender onboarding showing curated investment products"
-  - src: "/images/products/danamas/dashboard.jpg"
+    caption: "Lender onboarding, Danamas"
+  - src: "../../assets/products/danamas/dashboard.jpg"
     alt: "Danamas lender dashboard showing Dana Siaga and Alokasi Investasi"
-  - src: "/images/products/danamas/reksadana.jpg"
+    caption: "Lender dashboard, Danamas"
+  - src: "../../assets/products/danamas/reksadana.jpg"
     alt: "Danamas Reksadana product list with returns and investment details"
+    caption: "Reksadana product detail, Danamas"
 phoneScreensLabel: "Danamas Lender Platform — Rebuilt on a Modern Web Stack"
 ---
 

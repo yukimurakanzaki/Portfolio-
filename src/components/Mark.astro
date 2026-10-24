@@ -1,0 +1,9 @@
+---
+// The meridian with its point. One colour, no effects; legible at 16px.
+interface Props { size?: number }
+const { size = 20 } = Astro.props;
+---
+<svg width={size} height={size} viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false">
+  <rect x="9.75" y="3" width="2.5" height="26" />
+  <circle cx="21" cy="11" r="4.25" />
+</svg>

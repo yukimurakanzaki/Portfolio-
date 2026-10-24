@@ -1,19 +1,23 @@
 ---
-title: "Shipping a Payment Gateway Integration Ahead of Plan"
+title: "Shipping a payment gateway integration ahead of plan"
 company: "PT Bussan Auto Finance (BAF)"
 subtitle: "Product Manager (Official Title: Product Owner & UI/UX Specialist) · 2023–2024"
 summary: "Owned end-to-end integration of a third-party payment gateway into BAF Mobile — delivering well ahead of the original plan."
+outcome: "Delivered well ahead of the original plan, with production launch months early."
 tags: ["Payments", "Delivery"]
 readTime: "5 min read"
 slug: "shipping-payment-gateway-integration"
 order: 2
 phoneScreens:
-  - src: "/images/products/baf/home.jpg"
+  - src: "../../assets/products/baf/home.jpg"
     alt: "BAF Mobile home screen showing loan contract and QRIS"
-  - src: "/images/products/baf/payment.jpg"
+    caption: "Home screen, BAF Mobile"
+  - src: "../../assets/products/baf/payment.jpg"
     alt: "BAF Mobile payment method selection showing BLU, VA, autodebit options"
-  - src: "/images/products/baf/success.jpg"
+    caption: "Payment method selection, BAF Mobile"
+  - src: "../../assets/products/baf/success.jpg"
     alt: "BAF Mobile payment success confirmation screen"
+    caption: "Payment success, BAF Mobile"
 phoneScreensLabel: "BAF Mobile — Payment Gateway Feature"
 ---
 

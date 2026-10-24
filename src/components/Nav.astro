@@ -1,77 +1,44 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
-import Logo from './Logo.astro';
-
-interface Props {
-  currentPath: string;
-}
+import Mark from './Mark.astro';
+import { site, nav } from '../lib/site';
 
 const { currentPath } = Astro.props;
-
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/case-studies', label: 'Case Studies' },
-  { href: '/playbook', label: 'PM Playbook' },
-  { href: '/services', label: 'Services' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
-];
+const path = currentPath.replace(/\/$/, '') || '/';
+const current = (href: string) => (path === href ? 'page' : path.startsWith(href + '/') ? 'true' : undefined);
 ---
 
-<header class="sticky top-0 z-50 border-b border-slate-200 dark:border-white/10 bg-white/90 dark:bg-[#060610]/90 backdrop-blur-sm">
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <a href="/" class="flex items-center gap-2.5 group">
-        <Logo />
-        <span class="text-slate-900 dark:text-white font-semibold text-base tracking-tight group-hover:text-[#3B6EEF] transition-colors">Muhammad Adi Putra</span>
-      </a>
-      <div class="hidden md:flex items-center gap-1">
-        {navLinks.map(link => (
-          <a
-            href={link.href}
-            class:list={[
-              'px-3 py-2 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#3B6EEF]',
-              currentPath === link.href
-                ? 'text-[#3B6EEF] font-semibold'
-                : 'text-slate-600 dark:text-slate-300 hover:text-[#3B6EEF] dark:hover:text-[#3B6EEF] hover:bg-slate-100 dark:hover:bg-white/5'
-            ]}
-          >
-            {link.label}
-          </a>
-        ))}
-        <ThemeToggle />
-      </div>
-      <div class="flex items-center gap-2 md:hidden">
-        <ThemeToggle />
-        <button id="mobile-menu-btn" class="p-2 rounded-md text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-[#3B6EEF]" aria-label="Toggle menu">
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
+<header class="site-header">
+  <div class="page nav-row">
+    <a href="/" class="wordmark"><Mark size={18} /><span>{site.name}</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      {nav.map((l) => <a href={l.href} aria-current={current(l.href)}>{l.label}</a>)}
+    </nav>
+    <div class="flex items-center gap-4">
+      <ThemeToggle />
+      <button type="button" class="menu-btn" id="menu-open" aria-haspopup="dialog">Menu</button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden pb-3">
-      {navLinks.map(link => (
-        <a
-          href={link.href}
-          class:list={[
-            'block px-3 py-2 rounded-md text-sm font-medium mb-1 transition-colors focus:outline-none focus:ring-2 focus:ring-[#3B6EEF]',
-            currentPath === link.href
-              ? 'text-[#3B6EEF] border-l-2 border-[#3B6EEF] bg-blue-50 dark:bg-[#3B6EEF]/5'
-              : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-white/5'
-          ]}
-        >
-          {link.label}
-        </a>
-      ))}
-    </div>
-  </nav>
+  </div>
 </header>
 
+<dialog id="menu" class="menu-dialog" aria-label="Menu">
+  <div class="page nav-row">
+    <span class="t-label">Menu</span>
+    <button type="button" class="menu-btn" id="menu-close" style="display:inline-block">Close</button>
+  </div>
+  <nav class="page menu-links" aria-label="Mobile" style="flex:1; overflow-y:auto; padding-top:1.5rem;">
+    {nav.map((l, i) => (
+      <a href={l.href} aria-current={current(l.href)}>
+        <span class="field-note tnum">{String(i + 1).padStart(2, '0')}</span>{l.label}
+      </a>
+    ))}
+  </nav>
+</dialog>
+
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  btn?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
-  });
+  const menu = document.getElementById('menu') as HTMLDialogElement | null;
+  document.getElementById('menu-open')?.addEventListener('click', () => menu?.showModal());
+  document.getElementById('menu-close')?.addEventListener('click', () => menu?.close());
+  menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => menu.close()));
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => e.matches && menu?.close());
 </script>

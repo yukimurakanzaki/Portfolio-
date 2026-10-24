@@ -1,8 +1,9 @@
 ---
-title: "From Personal Finance Tool to Multi-Tenant SaaS — in 8 Days"
+title: "From personal finance tool to multi-tenant SaaS — in 8 days"
 company: "FI Dashboard (Own Product)"
 subtitle: "Product Owner & Solo PM · Jun – Jul 2026"
 summary: "Took a single-user, local-only personal finance PWA and evolved it into a cloud-backed, multi-tenant household finance product — from beta through planned sunset of the local-first architecture — in just over a week."
+outcome: "8 days from first commit to a cloud-syncing, multi-tenant beta."
 tags: ["0-to-1", "SaaS", "Product Strategy", "Architecture"]
 readTime: "7 min read"
 slug: "fi-dashboard-personal-to-product"

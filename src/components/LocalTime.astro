@@ -1,0 +1,15 @@
+---
+// Live Jakarta time; hidden until JS has a value to show. `sep` adds a leading " · ".
+const { sep = false } = Astro.props;
+---
+<span data-wib hidden class:list={[sep && 'wib-sep']}></span>
+
+<script>
+  const fmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Jakarta' });
+  const tick = () => document.querySelectorAll<HTMLElement>('[data-wib]').forEach((el) => {
+    el.textContent = `${fmt.format(new Date())} WIB`;
+    el.hidden = false;
+  });
+  tick();
+  setInterval(tick, 15000);
+</script>
